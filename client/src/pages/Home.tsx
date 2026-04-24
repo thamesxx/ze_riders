@@ -1,25 +1,203 @@
 import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
+import { Link } from "wouter";
+import { Phone, MapPin, Mail, Smartphone, TrendingUp, Users } from "lucide-react";
 
-/**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
- */
 export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
-
   return (
     <div className="min-h-screen flex flex-col">
-      <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
-      </main>
+      {/* Hero Section */}
+      <section className="relative w-full h-[600px] overflow-hidden">
+        <img
+          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663596086202/YvPzrgTJTNVygv8TaE4iFd/hero-home-J2Vgfa8QRdJR78SSZh4E2o.webp"
+          alt="Motorcycle riders in urban setting"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/40"></div>
+
+        {/* Hero Content */}
+        <div className="absolute inset-0 flex items-center">
+          <div className="container">
+            <div className="max-w-2xl">
+              <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
+                Become A Rider, Secure Your Future!
+              </h1>
+              <p className="text-lg text-gray-100 mb-8">
+                Join us today for a stable, reliable motorcycle rider with great income and benefits.
+              </p>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <button className="btn-primary">
+                  Become a Rider →
+                </button>
+                <a
+                  href="https://apps.apple.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-all"
+                >
+                  <span>🍎</span> App Store
+                </a>
+                <a
+                  href="https://play.google.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-all"
+                >
+                  <span>🔵</span> Google Play
+                </a>
+              </div>
+
+              {/* Contact Info */}
+              <div className="flex items-center gap-2 text-white">
+                <Phone size={20} />
+                <span className="text-lg font-semibold">+92 313 4666615</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-16 bg-white">
+        <div className="container">
+          <h2 className="text-4xl font-bold text-[#1a1a1a] mb-4 text-center">
+            Ride, Earn, Grow
+          </h2>
+          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+            Learn more. Thrive in the gig economy with our comprehensive support system.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Feature 1 */}
+            <div className="bg-gray-50 p-8 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-[#22c55e] rounded-lg flex items-center justify-center mb-4">
+                <TrendingUp className="text-white" size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">Flexible Income</h3>
+              <p className="text-gray-600">
+                Earn competitive rates with flexible working hours. Choose when and where you work.
+              </p>
+            </div>
+
+            {/* Feature 2 */}
+            <div className="bg-gray-50 p-8 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-[#22c55e] rounded-lg flex items-center justify-center mb-4">
+                <Users className="text-white" size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">Community Support</h3>
+              <p className="text-gray-600">
+                Join a thriving community of riders. Get support, tips, and opportunities to grow.
+              </p>
+            </div>
+
+            {/* Feature 3 */}
+            <div className="bg-gray-50 p-8 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="w-12 h-12 bg-[#22c55e] rounded-lg flex items-center justify-center mb-4">
+                <Smartphone className="text-white" size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">Easy to Use App</h3>
+              <p className="text-gray-600">
+                Our intuitive app makes it simple to accept rides, track earnings, and manage your account.
+              </p>
+            </div>
+          </div>
+
+          {/* Apply Now Button */}
+          <div className="text-center mt-12">
+            <button className="btn-primary text-lg px-8 py-4">
+              Apply Now →
+            </button>
+            <p className="text-gray-600 mt-4">
+              <Phone size={18} className="inline mr-2" />
+              +92 313 4666615
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="dark-section py-12">
+        <div className="container">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            {/* Brand */}
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-10 h-10 bg-[#22c55e] rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold">Z</span>
+                </div>
+                <span className="font-bold text-lg text-white">Zaina Riders</span>
+              </div>
+              <p className="text-gray-400">
+                Your trusted ride-hailing and courier delivery service.
+              </p>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="font-bold text-white mb-4">Quick Links</h4>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/">
+                    <a className="text-gray-400 hover:text-[#22c55e] transition-colors">Home</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about">
+                    <a className="text-gray-400 hover:text-[#22c55e] transition-colors">About Us</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact">
+                    <a className="text-gray-400 hover:text-[#22c55e] transition-colors">Contact</a>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Services */}
+            <div>
+              <h4 className="font-bold text-white mb-4">Services</h4>
+              <ul className="space-y-2">
+                <li><a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors">Become a Rider</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors">Book a Ride</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors">Courier Service</a></li>
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <h4 className="font-bold text-white mb-4">Contact</h4>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-2 text-gray-400">
+                  <Phone size={16} />
+                  <span>+92 313 4666615</span>
+                </li>
+                <li className="flex items-center gap-2 text-gray-400">
+                  <Mail size={16} />
+                  <span>info@zainabenterprises.com</span>
+                </li>
+                <li className="flex items-start gap-2 text-gray-400">
+                  <MapPin size={16} className="mt-1" />
+                  <span>123 Gulshan-e-Iqbal, Karachi, Pakistan</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Social Links */}
+          <div className="border-t border-gray-700 pt-8 flex items-center justify-between">
+            <p className="text-gray-400">© 2026 Zaina Riders. All rights reserved.</p>
+            <div className="flex gap-4">
+              <a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors">Facebook</a>
+              <a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors">Twitter</a>
+              <a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors">Instagram</a>
+              <a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
