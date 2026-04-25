@@ -190,10 +190,11 @@ export default function About() {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-gray-600 to-gray-700 rounded-lg flex items-center justify-center relative">
-                  <span className="text-white font-bold">Z</span>
-                  <div className="absolute top-1 right-1 w-2 h-3 bg-blue-400 rounded-sm"></div>
-                </div>
+                <img
+                  src="/manus-storage/ze-rider-logo_4e569ae3.jpg"
+                  alt="Ze Rider Logo"
+                  className="w-10 h-10 rounded-lg object-cover"
+                />
                 <span className="font-bold text-lg text-white">Ze Rider</span>
               </div>
               <p className="text-gray-400">
@@ -247,9 +248,9 @@ export default function About() {
             </div>
           </div>
 
-          <div className="border-t border-gray-700 pt-8 flex items-center justify-between">
-            <p className="text-gray-400">© 2026 Ze Rider. All rights reserved.</p>
-            <div className="flex gap-4">
+          <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-gray-400 text-center md:text-left">© 2026 Ze Rider. All rights reserved.</p>
+            <div className="flex gap-4 flex-wrap justify-center md:justify-end">
               <a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Facebook</a>
               <a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Twitter</a>
               <a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Instagram</a>

@@ -191,9 +191,9 @@ export default function Home() {
           </div>
 
           {/* Social Links */}
-          <div className="border-t border-gray-700 pt-8 flex items-center justify-between">
-            <p className="text-gray-400">© 2026 Ze Rider. All rights reserved.</p>
-            <div className="flex gap-4">
+          <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-gray-400 text-center md:text-left">© 2026 Ze Rider. All rights reserved.</p>
+            <div className="flex gap-4 flex-wrap justify-center md:justify-end">
               <a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Facebook</a>
               <a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Twitter</a>
               <a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Instagram</a>
