@@ -72,7 +72,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Feature 1 */}
             <div className="bg-gray-50 p-8 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-[#22c55e] rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-[#2563eb] rounded-lg flex items-center justify-center mb-4">
                 <TrendingUp className="text-white" size={24} />
               </div>
               <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">Flexible Income</h3>
@@ -83,7 +83,7 @@ export default function Home() {
 
             {/* Feature 2 */}
             <div className="bg-gray-50 p-8 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-[#22c55e] rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-[#2563eb] rounded-lg flex items-center justify-center mb-4">
                 <Users className="text-white" size={24} />
               </div>
               <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">Community Support</h3>
@@ -94,7 +94,7 @@ export default function Home() {
 
             {/* Feature 3 */}
             <div className="bg-gray-50 p-8 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-[#22c55e] rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-[#2563eb] rounded-lg flex items-center justify-center mb-4">
                 <Smartphone className="text-white" size={24} />
               </div>
               <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">Easy to Use App</h3>
@@ -124,10 +124,11 @@ export default function Home() {
             {/* Brand */}
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 bg-[#22c55e] rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-to-br from-gray-600 to-gray-700 rounded-lg flex items-center justify-center relative">
                   <span className="text-white font-bold">Z</span>
+                  <div className="absolute top-1 right-1 w-2 h-3 bg-blue-400 rounded-sm"></div>
                 </div>
-                <span className="font-bold text-lg text-white">Zaina Riders</span>
+                <span className="font-bold text-lg text-white">Ze Rider</span>
               </div>
               <p className="text-gray-400">
                 Your trusted ride-hailing and courier delivery service.
@@ -140,17 +141,17 @@ export default function Home() {
               <ul className="space-y-2">
                 <li>
                   <Link href="/">
-                    <a className="text-gray-400 hover:text-[#22c55e] transition-colors">Home</a>
+                    <a className="text-gray-400 hover:text-[#2563eb] transition-colors">Home</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/about">
-                    <a className="text-gray-400 hover:text-[#22c55e] transition-colors">About Us</a>
+                    <a className="text-gray-400 hover:text-[#2563eb] transition-colors">About Us</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/contact">
-                    <a className="text-gray-400 hover:text-[#22c55e] transition-colors">Contact</a>
+                    <a className="text-gray-400 hover:text-[#2563eb] transition-colors">Contact</a>
                   </Link>
                 </li>
               </ul>
@@ -160,9 +161,9 @@ export default function Home() {
             <div>
               <h4 className="font-bold text-white mb-4">Services</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors">Become a Rider</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors">Book a Ride</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors">Courier Service</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Become a Rider</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Book a Ride</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Courier Service</a></li>
               </ul>
             </div>
 
@@ -176,7 +177,7 @@ export default function Home() {
                 </li>
                 <li className="flex items-center gap-2 text-gray-400">
                   <Mail size={16} />
-                  <span>info@zainabenterprises.com</span>
+                  <span>info@zerider.com</span>
                 </li>
                 <li className="flex items-start gap-2 text-gray-400">
                   <MapPin size={16} className="mt-1" />
@@ -188,12 +189,12 @@ export default function Home() {
 
           {/* Social Links */}
           <div className="border-t border-gray-700 pt-8 flex items-center justify-between">
-            <p className="text-gray-400">© 2026 Zaina Riders. All rights reserved.</p>
+            <p className="text-gray-400">© 2026 Ze Rider. All rights reserved.</p>
             <div className="flex gap-4">
-              <a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors">Facebook</a>
-              <a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors">Twitter</a>
-              <a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors">Instagram</a>
-              <a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors">LinkedIn</a>
+              <a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Facebook</a>
+              <a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Twitter</a>
+              <a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Instagram</a>
+              <a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">LinkedIn</a>
             </div>
           </div>
         </div>

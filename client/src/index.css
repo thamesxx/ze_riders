@@ -47,15 +47,15 @@
 }
 
 :root {
-  --primary: #22c55e;
+  --primary: #2563eb;
   --primary-foreground: #ffffff;
-  --sidebar-primary: #16a34a;
+  --sidebar-primary: #1d4ed8;
   --sidebar-primary-foreground: #ffffff;
-  --chart-1: #22c55e;
-  --chart-2: #16a34a;
-  --chart-3: #15803d;
-  --chart-4: #166534;
-  --chart-5: #14532d;
+  --chart-1: #2563eb;
+  --chart-2: #1d4ed8;
+  --chart-3: #1e40af;
+  --chart-4: #1e3a8a;
+  --chart-5: #172554;
   --radius: 0.65rem;
   --background: #ffffff;
   --foreground: #1a1a1a;
@@ -67,19 +67,19 @@
   --secondary-foreground: #374151;
   --muted: #d1d5db;
   --muted-foreground: #6b7280;
-  --accent: #22c55e;
+  --accent: #2563eb;
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
   --border: #e5e7eb;
   --input: #f3f4f6;
-  --ring: #22c55e;
+  --ring: #2563eb;
   --sidebar: #ffffff;
   --sidebar-foreground: #1a1a1a;
-  --sidebar-accent: #22c55e;
+  --sidebar-accent: #2563eb;
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: #e5e7eb;
-  --sidebar-ring: #22c55e;
+  --sidebar-ring: #2563eb;
 }
 
 .dark {
@@ -180,7 +180,7 @@
   }
 
   .btn-primary {
-    @apply bg-[#22c55e] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#16a34a] transition-all duration-300 hover:shadow-lg hover:scale-105;
+    @apply bg-[#2563eb] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#1d4ed8] transition-all duration-300 hover:shadow-lg hover:scale-105;
   }
 
   .flex {

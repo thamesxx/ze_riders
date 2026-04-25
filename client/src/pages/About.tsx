@@ -65,7 +65,7 @@ export default function About() {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Mission 1 */}
             <div className="bg-white p-8 rounded-lg border border-gray-200 text-center">
-              <div className="w-16 h-16 bg-[#22c55e] rounded-lg flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[#2563eb] rounded-lg flex items-center justify-center mx-auto mb-4">
                 <Zap className="text-white" size={32} />
               </div>
               <h3 className="text-2xl font-bold text-[#1a1a1a] mb-3">
@@ -78,7 +78,7 @@ export default function About() {
 
             {/* Mission 2 */}
             <div className="bg-white p-8 rounded-lg border border-gray-200 text-center">
-              <div className="w-16 h-16 bg-[#22c55e] rounded-lg flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[#2563eb] rounded-lg flex items-center justify-center mx-auto mb-4">
                 <Globe className="text-white" size={32} />
               </div>
               <h3 className="text-2xl font-bold text-[#1a1a1a] mb-3">
@@ -91,7 +91,7 @@ export default function About() {
 
             {/* Mission 3 */}
             <div className="bg-white p-8 rounded-lg border border-gray-200 text-center">
-              <div className="w-16 h-16 bg-[#22c55e] rounded-lg flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[#2563eb] rounded-lg flex items-center justify-center mx-auto mb-4">
                 <Heart className="text-white" size={32} />
               </div>
               <h3 className="text-2xl font-bold text-[#1a1a1a] mb-3">
@@ -109,12 +109,12 @@ export default function About() {
       <section className="py-16 bg-white">
         <div className="container">
           <h2 className="text-4xl font-bold text-[#1a1a1a] mb-12 text-center">
-            Why Choose Zaina Riders?
+            Why Choose Ze Rider?
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8">
             <div className="flex gap-4">
-              <div className="w-8 h-8 bg-[#22c55e] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+              <div className="w-8 h-8 bg-[#2563eb] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                 <span className="text-white font-bold">✓</span>
               </div>
               <div>
@@ -126,7 +126,7 @@ export default function About() {
             </div>
 
             <div className="flex gap-4">
-              <div className="w-8 h-8 bg-[#22c55e] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+              <div className="w-8 h-8 bg-[#2563eb] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                 <span className="text-white font-bold">✓</span>
               </div>
               <div>
@@ -138,7 +138,7 @@ export default function About() {
             </div>
 
             <div className="flex gap-4">
-              <div className="w-8 h-8 bg-[#22c55e] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+              <div className="w-8 h-8 bg-[#2563eb] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                 <span className="text-white font-bold">✓</span>
               </div>
               <div>
@@ -150,7 +150,7 @@ export default function About() {
             </div>
 
             <div className="flex gap-4">
-              <div className="w-8 h-8 bg-[#22c55e] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+              <div className="w-8 h-8 bg-[#2563eb] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                 <span className="text-white font-bold">✓</span>
               </div>
               <div>
@@ -171,14 +171,14 @@ export default function About() {
             Ready to Join Our Community?
           </h2>
           <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-            Whether you want to earn as a rider or book reliable transportation, Zaina Riders is here for you.
+            Whether you want to earn as a rider or book reliable transportation, Ze Rider is here for you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="btn-primary">
               Become a Rider
             </button>
             <Link href="/contact">
-              <a className="px-6 py-3 border-2 border-[#22c55e] text-[#22c55e] font-semibold rounded-lg hover:bg-[#22c55e] hover:text-white transition-all">
+              <a className="px-6 py-3 border-2 border-[#2563eb] text-[#2563eb] font-semibold rounded-lg hover:bg-[#2563eb] hover:text-white transition-all inline-block">
                 Get in Touch
               </a>
             </Link>
@@ -192,10 +192,11 @@ export default function About() {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 bg-[#22c55e] rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-to-br from-gray-600 to-gray-700 rounded-lg flex items-center justify-center relative">
                   <span className="text-white font-bold">Z</span>
+                  <div className="absolute top-1 right-1 w-2 h-3 bg-blue-400 rounded-sm"></div>
                 </div>
-                <span className="font-bold text-lg text-white">Zaina Riders</span>
+                <span className="font-bold text-lg text-white">Ze Rider</span>
               </div>
               <p className="text-gray-400">
                 Your trusted ride-hailing and courier delivery service.
@@ -207,17 +208,17 @@ export default function About() {
               <ul className="space-y-2">
                 <li>
                   <Link href="/">
-                    <a className="text-gray-400 hover:text-[#22c55e] transition-colors">Home</a>
+                    <a className="text-gray-400 hover:text-[#2563eb] transition-colors">Home</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/about">
-                    <a className="text-gray-400 hover:text-[#22c55e] transition-colors">About Us</a>
+                    <a className="text-gray-400 hover:text-[#2563eb] transition-colors">About Us</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/contact">
-                    <a className="text-gray-400 hover:text-[#22c55e] transition-colors">Contact</a>
+                    <a className="text-gray-400 hover:text-[#2563eb] transition-colors">Contact</a>
                   </Link>
                 </li>
               </ul>
@@ -226,9 +227,9 @@ export default function About() {
             <div>
               <h4 className="font-bold text-white mb-4">Services</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors">Become a Rider</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors">Book a Ride</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors">Courier Service</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Become a Rider</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Book a Ride</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Courier Service</a></li>
               </ul>
             </div>
 
@@ -239,7 +240,7 @@ export default function About() {
                   <span>📞 +92 313 4666615</span>
                 </li>
                 <li className="text-gray-400">
-                  <span>📧 info@zainabenterprises.com</span>
+                  <span>📧 info@zerider.com</span>
                 </li>
                 <li className="text-gray-400">
                   <span>📍 123 Gulshan-e-Iqbal, Karachi, Pakistan</span>
@@ -249,12 +250,12 @@ export default function About() {
           </div>
 
           <div className="border-t border-gray-700 pt-8 flex items-center justify-between">
-            <p className="text-gray-400">© 2026 Zaina Riders. All rights reserved.</p>
+            <p className="text-gray-400">© 2026 Ze Rider. All rights reserved.</p>
             <div className="flex gap-4">
-              <a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors">Facebook</a>
-              <a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors">Twitter</a>
-              <a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors">Instagram</a>
-              <a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors">LinkedIn</a>
+              <a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Facebook</a>
+              <a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Twitter</a>
+              <a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Instagram</a>
+              <a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">LinkedIn</a>
             </div>
           </div>
         </div>

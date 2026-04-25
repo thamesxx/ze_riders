@@ -91,7 +91,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#22c55e]"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
                     placeholder="John Doe"
                   />
                 </div>
@@ -106,7 +106,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#22c55e]"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -120,7 +120,7 @@ export default function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#22c55e]"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
                     placeholder="+92 300 1234567"
                   />
                 </div>
@@ -135,7 +135,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#22c55e] resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb] resize-none"
                     placeholder="Tell us how we can help..."
                   />
                 </div>
@@ -158,7 +158,7 @@ export default function Contact() {
               <div className="space-y-6">
                 {/* Phone */}
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 bg-[#22c55e] rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-[#2563eb] rounded-lg flex items-center justify-center flex-shrink-0">
                     <Phone className="text-white" size={24} />
                   </div>
                   <div>
@@ -170,19 +170,19 @@ export default function Contact() {
 
                 {/* Email */}
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 bg-[#22c55e] rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-[#2563eb] rounded-lg flex items-center justify-center flex-shrink-0">
                     <Mail className="text-white" size={24} />
                   </div>
                   <div>
                     <h3 className="font-bold text-[#1a1a1a] mb-1">Email</h3>
-                    <p className="text-gray-600">info@zainabenterprises.com</p>
+                    <p className="text-gray-600">info@zerider.com</p>
                     <p className="text-gray-500 text-sm">We'll respond within 24 hours</p>
                   </div>
                 </div>
 
                 {/* Address */}
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 bg-[#22c55e] rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-[#2563eb] rounded-lg flex items-center justify-center flex-shrink-0">
                     <MapPin className="text-white" size={24} />
                   </div>
                   <div>
@@ -228,7 +228,7 @@ export default function Contact() {
                     {faq.question}
                   </h3>
                   <ChevronDown
-                    className={`text-[#22c55e] transition-transform ${
+                    className={`text-[#2563eb] transition-transform ${
                       expandedFaq === index ? "rotate-180" : ""
                     }`}
                     size={24}
@@ -267,10 +267,11 @@ export default function Contact() {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 bg-[#22c55e] rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-to-br from-gray-600 to-gray-700 rounded-lg flex items-center justify-center relative">
                   <span className="text-white font-bold">Z</span>
+                  <div className="absolute top-1 right-1 w-2 h-3 bg-blue-400 rounded-sm"></div>
                 </div>
-                <span className="font-bold text-lg text-white">Zaina Riders</span>
+                <span className="font-bold text-lg text-white">Ze Rider</span>
               </div>
               <p className="text-gray-400">
                 Your trusted ride-hailing and courier delivery service.
@@ -282,17 +283,17 @@ export default function Contact() {
               <ul className="space-y-2">
                 <li>
                   <Link href="/">
-                    <a className="text-gray-400 hover:text-[#22c55e] transition-colors">Home</a>
+                    <a className="text-gray-400 hover:text-[#2563eb] transition-colors">Home</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/about">
-                    <a className="text-gray-400 hover:text-[#22c55e] transition-colors">About Us</a>
+                    <a className="text-gray-400 hover:text-[#2563eb] transition-colors">About Us</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/contact">
-                    <a className="text-gray-400 hover:text-[#22c55e] transition-colors">Contact</a>
+                    <a className="text-gray-400 hover:text-[#2563eb] transition-colors">Contact</a>
                   </Link>
                 </li>
               </ul>
@@ -301,9 +302,9 @@ export default function Contact() {
             <div>
               <h4 className="font-bold text-white mb-4">Services</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors">Become a Rider</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors">Book a Ride</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors">Courier Service</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Become a Rider</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Book a Ride</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Courier Service</a></li>
               </ul>
             </div>
 
@@ -314,7 +315,7 @@ export default function Contact() {
                   <span>📞 +92 313 4666615</span>
                 </li>
                 <li className="text-gray-400">
-                  <span>📧 info@zainabenterprises.com</span>
+                  <span>📧 info@zerider.com</span>
                 </li>
                 <li className="text-gray-400">
                   <span>📍 123 Gulshan-e-Iqbal, Karachi, Pakistan</span>
@@ -324,12 +325,12 @@ export default function Contact() {
           </div>
 
           <div className="border-t border-gray-700 pt-8 flex items-center justify-between">
-            <p className="text-gray-400">© 2026 Zaina Riders. All rights reserved.</p>
+            <p className="text-gray-400">© 2026 Ze Rider. All rights reserved.</p>
             <div className="flex gap-4">
-              <a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors">Facebook</a>
-              <a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors">Twitter</a>
-              <a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors">Instagram</a>
-              <a href="#" className="text-gray-400 hover:text-[#22c55e] transition-colors">LinkedIn</a>
+              <a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Facebook</a>
+              <a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Twitter</a>
+              <a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Instagram</a>
+              <a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">LinkedIn</a>
             </div>
           </div>
         </div>
