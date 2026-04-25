@@ -140,18 +140,18 @@ export default function Home() {
               <h4 className="font-bold text-white mb-4">Quick Links</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/">
-                    <a className="text-gray-400 hover:text-[#2563eb] transition-colors">Home</a>
+                  <Link href="/" className="text-gray-400 hover:text-[#2563eb] transition-colors">
+                    Home
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about">
-                    <a className="text-gray-400 hover:text-[#2563eb] transition-colors">About Us</a>
+                  <Link href="/about" className="text-gray-400 hover:text-[#2563eb] transition-colors">
+                    About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact">
-                    <a className="text-gray-400 hover:text-[#2563eb] transition-colors">Contact</a>
+                  <Link href="/contact" className="text-gray-400 hover:text-[#2563eb] transition-colors">
+                    Contact
                   </Link>
                 </li>
               </ul>

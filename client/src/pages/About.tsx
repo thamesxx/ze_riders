@@ -177,10 +177,8 @@ export default function About() {
             <button className="btn-primary">
               Become a Rider
             </button>
-            <Link href="/contact">
-              <a className="px-6 py-3 border-2 border-[#2563eb] text-[#2563eb] font-semibold rounded-lg hover:bg-[#2563eb] hover:text-white transition-all inline-block">
-                Get in Touch
-              </a>
+            <Link href="/contact" className="px-6 py-3 border-2 border-[#2563eb] text-[#2563eb] font-semibold rounded-lg hover:bg-[#2563eb] hover:text-white transition-all inline-block">
+              Get in Touch
             </Link>
           </div>
         </div>
@@ -207,18 +205,18 @@ export default function About() {
               <h4 className="font-bold text-white mb-4">Quick Links</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/">
-                    <a className="text-gray-400 hover:text-[#2563eb] transition-colors">Home</a>
+                  <Link href="/" className="text-gray-400 hover:text-[#2563eb] transition-colors">
+                    Home
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about">
-                    <a className="text-gray-400 hover:text-[#2563eb] transition-colors">About Us</a>
+                  <Link href="/about" className="text-gray-400 hover:text-[#2563eb] transition-colors">
+                    About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact">
-                    <a className="text-gray-400 hover:text-[#2563eb] transition-colors">Contact</a>
+                  <Link href="/contact" className="text-gray-400 hover:text-[#2563eb] transition-colors">
+                    Contact
                   </Link>
                 </li>
               </ul>

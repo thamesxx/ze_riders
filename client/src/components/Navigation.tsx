@@ -17,20 +17,14 @@ export default function Navigation() {
 
         {/* Navigation Links */}
         <div className="flex items-center gap-8">
-          <Link href="/">
-            <a className="text-gray-700 hover:text-[#2563eb] font-medium transition-colors">
-              Home
-            </a>
+          <Link href="/" className="text-gray-700 hover:text-[#2563eb] font-medium transition-colors">
+            Home
           </Link>
-          <Link href="/about">
-            <a className="text-gray-700 hover:text-[#2563eb] font-medium transition-colors">
-              About Us
-            </a>
+          <Link href="/about" className="text-gray-700 hover:text-[#2563eb] font-medium transition-colors">
+            About Us
           </Link>
-          <Link href="/contact">
-            <a className="text-gray-700 hover:text-[#2563eb] font-medium transition-colors">
-              Contact Us
-            </a>
+          <Link href="/contact" className="text-gray-700 hover:text-[#2563eb] font-medium transition-colors">
+            Contact Us
           </Link>
           <a href="#" className="btn-primary inline-block">
             Become a Rider
