@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "wouter";
 import { Phone, Mail, MapPin, ChevronDown } from "lucide-react";
 import { toast } from "sonner";
+import { MapView } from "@/components/Map";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -193,12 +194,21 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Map Placeholder */}
-              <div className="mt-8 bg-gray-200 rounded-lg h-64 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="mx-auto mb-2 text-gray-400" size={32} />
-                  <p className="text-gray-600">Our Location on Map</p>
-                </div>
+              {/* Map with Google Maps API */}
+              <div className="mt-8 rounded-lg overflow-hidden">
+                <MapView
+                  initialCenter={{ lat: 24.8607, lng: 67.0011 }}
+                  initialZoom={15}
+                  onMapReady={(map) => {
+                    // Add marker for Ze Rider office
+                    new google.maps.marker.AdvancedMarkerElement({
+                      map,
+                      position: { lat: 24.8607, lng: 67.0011 },
+                      title: "Ze Rider - Gulshan-e-Iqbal, Karachi",
+                    });
+                  }}
+                  className="h-64"
+                />
               </div>
             </div>
           </div>
