@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { Phone, MapPin, Mail, Smartphone, TrendingUp, Users } from "lucide-react";
+import { Phone, MapPin, Mail, Smartphone, TrendingUp, Users, Apple } from "lucide-react";
 
 export default function Home() {
   return (
@@ -37,7 +37,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-all"
                 >
-                  <span>🍎</span> App Store
+                  <Apple size={20} /> App Store
                 </a>
                 <a
                   href="https://play.google.com"
@@ -45,7 +45,9 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-all"
                 >
-                  <span>🔵</span> Google Play
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3 13.5v8.25A1.5 1.5 0 004.5 23h15a1.5 1.5 0 001.5-1.5V13.5M1 5.5C1 4.119 2.119 3 3.5 3h17C21.881 3 23 4.119 23 5.5v6c0 1.381-1.119 2.5-2.5 2.5h-17C2.119 14 1 12.881 1 11.5v-6z"/>
+                  </svg> Google Play
                 </a>
               </div>
 
@@ -124,10 +126,11 @@ export default function Home() {
             {/* Brand */}
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-gray-600 to-gray-700 rounded-lg flex items-center justify-center relative">
-                  <span className="text-white font-bold">Z</span>
-                  <div className="absolute top-1 right-1 w-2 h-3 bg-blue-400 rounded-sm"></div>
-                </div>
+                <img
+                  src="/manus-storage/ze-rider-logo_4e569ae3.jpg"
+                  alt="Ze Rider Logo"
+                  className="w-10 h-10 rounded-lg object-cover"
+                />
                 <span className="font-bold text-lg text-white">Ze Rider</span>
               </div>
               <p className="text-gray-400">
