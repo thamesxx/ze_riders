@@ -53,8 +53,8 @@ export default function Contact() {
       {/* Hero Section */}
       <section className="relative w-full h-[500px] overflow-hidden">
         <img
-          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663596086202/YvPzrgTJTNVygv8TaE4iFd/hero-contact-9LYvZRh5iz4vdBck5TZwR3.webp"
-          alt="Contact us"
+          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663596086202/YvPzrgTJTNVygv8TaE4iFd/contact-hero-branded-gpSqEeGRXBWGxvEFmEWCjS.webp"
+          alt="Ze Rider branded riders"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/40"></div>
