@@ -236,13 +236,16 @@ export default function About() {
               <h4 className="font-bold text-white mb-4">Contact</h4>
               <ul className="space-y-3">
                 <li className="text-gray-400">
-                  <span>📞 +92 313 4666615</span>
+                  <span>📞 +92 314 2560770</span>
+                </li>
+                <li className="text-gray-400">
+                  <span>📞 021-34491808 (PTCL)</span>
                 </li>
                 <li className="text-gray-400">
                   <span>📧 info@zerider.com</span>
                 </li>
                 <li className="text-gray-400">
-                  <span>📍 123 Gulshan-e-Iqbal, Karachi, Pakistan</span>
+                  <span>📍 Malir Cantt, 4 Dots, Karachi, Pakistan</span>
                 </li>
               </ul>
             </div>

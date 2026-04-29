@@ -27,24 +27,24 @@ export default function Contact() {
 
   const faqs = [
     {
-      question: "When can I start earning as a rider?",
-      answer: "Once your application is approved and you complete the onboarding process, you can start accepting rides immediately. The approval process typically takes 2-3 business days.",
+      question: "How do I book a ride with Ze Rider?",
+      answer: "Simply download our app from the App Store or Google Play, create an account, enter your destination, and confirm your booking. A rider will arrive within minutes. You can track your ride in real-time.",
     },
     {
-      question: "What are the requirements to become a rider?",
-      answer: "You must be at least 18 years old, have a valid motorcycle license, insurance, and pass our safety verification. A smartphone with our app is also required.",
+      question: "What are your pricing rates?",
+      answer: "Our rates are competitive and transparent. We charge based on distance and time. There are no hidden fees. You will see the estimated fare before confirming your booking.",
     },
     {
-      question: "How does the payment system work?",
-      answer: "Earnings are calculated based on distance, time, and demand. You can withdraw your earnings daily to your bank account. We provide transparent breakdowns of all earnings.",
+      question: "How can I track my delivery or ride?",
+      answer: "Once you book, you can track your ride or delivery in real-time through our app. You will receive notifications at every step of your journey.",
     },
     {
-      question: "Is there customer support available?",
-      answer: "Yes, we offer 24/7 customer support through phone, email, and in-app chat. Our support team is always ready to help with any questions or issues.",
+      question: "Is my ride safe and secure?",
+      answer: "Yes, all our riders are verified and trained. We provide GPS tracking, emergency support, and insurance coverage for all rides. Your safety is our top priority.",
     },
     {
-      question: "What safety measures are in place?",
-      answer: "We provide comprehensive insurance coverage, safety training, emergency support, and a verified user system to ensure the safety of both riders and passengers.",
+      question: "What payment methods do you accept?",
+      answer: "We accept cash, credit cards, debit cards, and digital wallets. You can choose your preferred payment method when booking or in the app settings.",
     },
   ];
 
@@ -164,7 +164,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-bold text-[#1a1a1a] mb-1">Phone</h3>
-                    <p className="text-gray-600">+92 313 4666615</p>
+                    <p className="text-gray-600">+92 314 2560770</p>
+                    <p className="text-gray-600">021-34491808 (PTCL)</p>
                     <p className="text-gray-500 text-sm">Available 24/7</p>
                   </div>
                 </div>
@@ -188,7 +189,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-bold text-[#1a1a1a] mb-1">Address</h3>
-                    <p className="text-gray-600">123 Gulshan-e-Iqbal, Karachi, Pakistan</p>
+                    <p className="text-gray-600">Malir Cantt, 4 Dots, Karachi, Pakistan</p>
                     <p className="text-gray-500 text-sm">Office Hours: 9 AM - 6 PM (Mon-Fri)</p>
                   </div>
                 </div>
@@ -197,14 +198,14 @@ export default function Contact() {
               {/* Map with Google Maps API */}
               <div className="mt-8 rounded-lg overflow-hidden">
                 <MapView
-                  initialCenter={{ lat: 24.8607, lng: 67.0011 }}
+                  initialCenter={{ lat: 24.8245, lng: 67.1338 }}
                   initialZoom={15}
                   onMapReady={(map) => {
                     // Add marker for Ze Rider office
                     new google.maps.marker.AdvancedMarkerElement({
                       map,
-                      position: { lat: 24.8607, lng: 67.0011 },
-                      title: "Ze Rider - Gulshan-e-Iqbal, Karachi",
+                      position: { lat: 24.8245, lng: 67.1338 },
+                      title: "Ze Rider - Malir Cantt, 4 Dots, Karachi",
                     });
                   }}
                   className="h-64"
@@ -323,13 +324,16 @@ export default function Contact() {
               <h4 className="font-bold text-white mb-4">Contact</h4>
               <ul className="space-y-3">
                 <li className="text-gray-400">
-                  <span>📞 +92 313 4666615</span>
+                  <span>📞 +92 314 2560770</span>
+                </li>
+                <li className="text-gray-400">
+                  <span>📞 021-34491808 (PTCL)</span>
                 </li>
                 <li className="text-gray-400">
                   <span>📧 info@zerider.com</span>
                 </li>
                 <li className="text-gray-400">
-                  <span>📍 123 Gulshan-e-Iqbal, Karachi, Pakistan</span>
+                  <span>📍 Malir Cantt, 4 Dots, Karachi, Pakistan</span>
                 </li>
               </ul>
             </div>

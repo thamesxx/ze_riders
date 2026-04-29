@@ -49,9 +49,15 @@ export default function Home() {
               </div>
 
               {/* Contact Info */}
-              <div className="flex items-center gap-2 text-white">
-                <Phone size={20} />
-                <span className="text-lg font-semibold">+92 313 4666615</span>
+              <div className="flex flex-col gap-3 text-white">
+                <div className="flex items-center gap-2">
+                  <Phone size={20} />
+                  <span className="text-lg font-semibold">+92 314 2560770</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Phone size={20} />
+                  <span className="text-lg font-semibold">021-34491808 (PTCL)</span>
+                </div>
               </div>
             </div>
           </div>
@@ -108,9 +114,15 @@ export default function Home() {
             <Link href="/contact" className="btn-primary text-lg px-8 py-4 inline-block">
               Get Started →
             </Link>
-            <p className="text-gray-600 mt-4">
-              <Phone size={18} className="inline mr-2" />
-              +92 313 4666615
+            <p className="text-gray-600 mt-4 flex flex-col gap-2">
+              <span className="flex items-center">
+                <Phone size={18} className="inline mr-2" />
+                +92 314 2560770
+              </span>
+              <span className="flex items-center">
+                <Phone size={18} className="inline mr-2" />
+                021-34491808 (PTCL)
+              </span>
             </p>
           </div>
         </div>
@@ -173,7 +185,11 @@ export default function Home() {
               <ul className="space-y-3">
                 <li className="flex items-center gap-2 text-gray-400">
                   <Phone size={16} />
-                  <span>+92 313 4666615</span>
+                  <span>+92 314 2560770</span>
+                </li>
+                <li className="flex items-center gap-2 text-gray-400">
+                  <Phone size={16} />
+                  <span>021-34491808 (PTCL)</span>
                 </li>
                 <li className="flex items-center gap-2 text-gray-400">
                   <Mail size={16} />
@@ -181,7 +197,7 @@ export default function Home() {
                 </li>
                 <li className="flex items-start gap-2 text-gray-400">
                   <MapPin size={16} className="mt-1" />
-                  <span>123 Gulshan-e-Iqbal, Karachi, Pakistan</span>
+                  <span>Malir Cantt, 4 Dots, Karachi, Pakistan</span>
                 </li>
               </ul>
             </div>
