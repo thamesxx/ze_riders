@@ -164,21 +164,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="dark-section py-16">
-        <div className="container text-center">
-          <h2 className="text-4xl font-bold mb-6">
-            Ready to Join Our Community?
-          </h2>
-          <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-            Whether you want to earn as a rider or book reliable transportation, Ze Rider is here for you.
-          </p>
-          <Link href="/contact" className="px-8 py-3 bg-[#2563eb] text-white font-semibold rounded-lg hover:bg-[#1d4ed8] transition-all inline-block">
-            Book Now
-          </Link>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="dark-section py-12">
         <div className="container">

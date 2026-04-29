@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "wouter";
 import { Phone, Mail, MapPin, ChevronDown } from "lucide-react";
 import { toast } from "sonner";
@@ -12,6 +12,18 @@ export default function Contact() {
     message: "",
   });
 
+  const [jobFormData, setJobFormData] = useState({
+    fullName: "",
+    dateOfBirth: "",
+    cnic: "",
+    email: "",
+    phone: "",
+    address: "",
+    position: "",
+    drivingLicense: "",
+    declaration: false,
+  });
+
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -19,10 +31,38 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const handleJobChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value, type, checked } = e.target;
+    setJobFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast.success("Message sent! We'll get back to you soon.");
     setFormData({ name: "", email: "", phone: "", message: "" });
+  };
+
+  const handleJobSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!jobFormData.declaration) {
+      toast.error("Please agree to the declaration.");
+      return;
+    }
+    toast.success("Application submitted! We'll review and get back to you soon.");
+    setJobFormData({
+      fullName: "",
+      dateOfBirth: "",
+      cnic: "",
+      email: "",
+      phone: "",
+      address: "",
+      position: "",
+      drivingLicense: "",
+      declaration: false,
+    });
   };
 
   const faqs = [
@@ -94,24 +134,8 @@ export default function Contact() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
-                    placeholder="John Doe"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold text-[#1a1a1a] mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
-                    placeholder="john@example.com"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
+                    placeholder="Enter your name"
                   />
                 </div>
 
@@ -124,8 +148,8 @@ export default function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
-                    placeholder="+92 300 1234567"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
+                    placeholder="Enter your phone number"
                   />
                 </div>
 
@@ -137,69 +161,58 @@ export default function Contact() {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    required
                     rows={5}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb] resize-none"
-                    placeholder="Tell us how we can help..."
-                  />
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb] resize-none"
+                    placeholder="Enter your message"
+                  ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="btn-primary w-full"
+                  className="w-full bg-[#2563eb] text-white font-semibold py-3 rounded-lg hover:bg-[#1d4ed8] transition-all"
                 >
                   Send Message
                 </button>
               </form>
             </div>
 
-            {/* Contact Info */}
+            {/* Contact Info & Map */}
             <div>
               <h2 className="text-3xl font-bold text-[#1a1a1a] mb-8">
                 Get in Touch With Us
               </h2>
 
-              <div className="space-y-6">
-                {/* Phone */}
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 bg-[#2563eb] rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="text-white" size={24} />
-                  </div>
+              <div className="space-y-6 mb-8">
+                <div className="flex items-start gap-4">
+                  <Phone className="text-[#2563eb] mt-1 flex-shrink-0" size={24} />
                   <div>
-                    <h3 className="font-bold text-[#1a1a1a] mb-1">Phone</h3>
+                    <h3 className="font-semibold text-[#1a1a1a]">Phone</h3>
                     <p className="text-gray-600">+92 314 2560770</p>
                     <p className="text-gray-600">021-34491808 (PTCL)</p>
-                    <p className="text-gray-500 text-sm">Available 24/7</p>
                   </div>
                 </div>
 
-                {/* Address */}
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 bg-[#2563eb] rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="text-white" size={24} />
-                  </div>
+                <div className="flex items-start gap-4">
+                  <MapPin className="text-[#2563eb] mt-1 flex-shrink-0" size={24} />
                   <div>
-                    <h3 className="font-bold text-[#1a1a1a] mb-1">Address</h3>
+                    <h3 className="font-semibold text-[#1a1a1a]">Address</h3>
                     <p className="text-gray-600">Malir Cantt, 4 Dots, Karachi, Pakistan</p>
-                    <p className="text-gray-500 text-sm">Office Hours: 9 AM - 6 PM (Mon-Fri)</p>
                   </div>
                 </div>
               </div>
 
-              {/* Map with Google Maps API */}
-              <div className="mt-8 rounded-lg overflow-hidden">
+              {/* Map */}
+              <div className="rounded-lg overflow-hidden border border-gray-200">
                 <MapView
                   initialCenter={{ lat: 24.8245, lng: 67.1338 }}
                   initialZoom={15}
                   onMapReady={(map) => {
-                    // Add marker for Ze Rider office
-                    new google.maps.marker.AdvancedMarkerElement({
+                    new window.google.maps.marker.AdvancedMarkerElement({
                       map,
                       position: { lat: 24.8245, lng: 67.1338 },
-                      title: "Ze Rider - Malir Cantt, 4 Dots, Karachi",
+                      title: "Ze Rider - Malir Cantt",
                     });
                   }}
-                  className="h-64"
                 />
               </div>
             </div>
@@ -209,12 +222,12 @@ export default function Contact() {
 
       {/* FAQs Section */}
       <section className="py-16 bg-gray-50">
-        <div className="container max-w-3xl">
+        <div className="container">
           <h2 className="text-4xl font-bold text-[#1a1a1a] mb-12 text-center">
             Frequently Asked Questions
           </h2>
 
-          <div className="space-y-4">
+          <div className="max-w-3xl mx-auto space-y-4">
             {faqs.map((faq, index) => (
               <div
                 key={index}
@@ -224,26 +237,200 @@ export default function Contact() {
                   onClick={() =>
                     setExpandedFaq(expandedFaq === index ? null : index)
                   }
-                  className="w-full flex items-center justify-between p-6 hover:bg-gray-50 transition-colors"
+                  className="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
                 >
                   <h3 className="text-lg font-semibold text-[#1a1a1a] text-left">
                     {faq.question}
                   </h3>
                   <ChevronDown
+                    size={20}
                     className={`text-[#2563eb] transition-transform ${
                       expandedFaq === index ? "rotate-180" : ""
                     }`}
-                    size={24}
                   />
                 </button>
 
                 {expandedFaq === index && (
-                  <div className="px-6 pb-6 border-t border-gray-200">
+                  <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
                     <p className="text-gray-600">{faq.answer}</p>
                   </div>
                 )}
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Job Application Section */}
+      <section className="py-16 bg-white">
+        <div className="container">
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-gradient-to-r from-[#2563eb] to-[#1d4ed8] rounded-lg p-12 text-white text-center mb-12">
+              <h2 className="text-4xl font-bold mb-4">
+                Join Our Team
+              </h2>
+              <p className="text-lg text-gray-100">
+                Ready to be part of Ze Rider? Apply now and start your journey with us.
+              </p>
+            </div>
+
+            <form onSubmit={handleJobSubmit} className="space-y-6 bg-gray-50 p-8 rounded-lg border border-gray-200">
+              <h3 className="text-2xl font-bold text-[#1a1a1a] mb-8">Job Application Form</h3>
+              
+              {/* Applicant Details */}
+              <div>
+                <h4 className="text-lg font-bold text-[#1a1a1a] mb-4">Applicant Details</h4>
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-semibold text-[#1a1a1a] mb-2">Full Name *</label>
+                    <input
+                      type="text"
+                      name="fullName"
+                      value={jobFormData.fullName}
+                      onChange={handleJobChange}
+                      required
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
+                      placeholder="Enter your full name"
+                    />
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-semibold text-[#1a1a1a] mb-2">Date of Birth *</label>
+                      <input
+                        type="date"
+                        name="dateOfBirth"
+                        value={jobFormData.dateOfBirth}
+                        onChange={handleJobChange}
+                        required
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-[#1a1a1a] mb-2">CNIC *</label>
+                      <input
+                        type="text"
+                        name="cnic"
+                        value={jobFormData.cnic}
+                        onChange={handleJobChange}
+                        required
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
+                        placeholder="Enter your CNIC"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-[#1a1a1a] mb-2">Email Address *</label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={jobFormData.email}
+                      onChange={handleJobChange}
+                      required
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
+                      placeholder="Enter your email"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-[#1a1a1a] mb-2">Phone Number *</label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={jobFormData.phone}
+                      onChange={handleJobChange}
+                      required
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
+                      placeholder="Enter your phone number"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-[#1a1a1a] mb-2">Address *</label>
+                    <input
+                      type="text"
+                      name="address"
+                      value={jobFormData.address}
+                      onChange={handleJobChange}
+                      required
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
+                      placeholder="Enter your address"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Job Information */}
+              <div>
+                <h4 className="text-lg font-bold text-[#1a1a1a] mb-4">Job Information</h4>
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-semibold text-[#1a1a1a] mb-2">Position Applied For *</label>
+                    <input
+                      type="text"
+                      name="position"
+                      value={jobFormData.position}
+                      onChange={handleJobChange}
+                      required
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
+                      placeholder="Enter position you're applying for"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-[#1a1a1a] mb-2">Do you have a valid driving license? *</label>
+                    <div className="flex gap-6">
+                      <label className="flex items-center gap-2">
+                        <input
+                          type="radio"
+                          name="drivingLicense"
+                          value="yes"
+                          checked={jobFormData.drivingLicense === "yes"}
+                          onChange={handleJobChange}
+                          className="w-4 h-4"
+                        />
+                        <span className="text-[#1a1a1a]">Yes</span>
+                      </label>
+                      <label className="flex items-center gap-2">
+                        <input
+                          type="radio"
+                          name="drivingLicense"
+                          value="no"
+                          checked={jobFormData.drivingLicense === "no"}
+                          onChange={handleJobChange}
+                          className="w-4 h-4"
+                        />
+                        <span className="text-[#1a1a1a]">No</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Declaration */}
+              <div>
+                <h4 className="text-lg font-bold text-[#1a1a1a] mb-4">Declaration</h4>
+                <p className="text-gray-600 mb-4">
+                  I hereby declare that the information provided is true and correct to the best of my knowledge.
+                </p>
+                <label className="flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    name="declaration"
+                    checked={jobFormData.declaration}
+                    onChange={handleJobChange}
+                    required
+                    className="w-4 h-4"
+                  />
+                  <span className="text-sm text-[#1a1a1a]">I agree to the terms and conditions *</span>
+                </label>
+              </div>
+
+              <button type="submit" className="w-full bg-[#2563eb] text-white font-semibold py-3 rounded-lg hover:bg-[#1d4ed8] transition-all">
+                Join Now
+              </button>
+            </form>
           </div>
         </div>
       </section>
