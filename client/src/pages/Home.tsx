@@ -20,17 +20,14 @@ export default function Home() {
           <div className="container">
             <div className="max-w-2xl">
               <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
-                Become A Rider, Secure Your Future!
+                Your Trusted Ride-Hailing Service
               </h1>
               <p className="text-lg text-gray-100 mb-8">
-                Join us today for a stable, reliable motorcycle rider with great income and benefits.
+                Fast, reliable, and affordable motorcycle rides and courier delivery services in your city.
               </p>
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <button className="btn-primary">
-                  Become a Rider →
-                </button>
                 <a
                   href="https://apps.apple.com"
                   target="_blank"
@@ -65,10 +62,10 @@ export default function Home() {
       <section className="py-16 bg-white">
         <div className="container">
           <h2 className="text-4xl font-bold text-[#1a1a1a] mb-4 text-center">
-            Ride, Earn, Grow
+            Why Choose Ze Rider?
           </h2>
           <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-            Learn more. Thrive in the gig economy with our comprehensive support system.
+            Experience the best ride-hailing and courier service with our commitment to quality and reliability.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -77,9 +74,9 @@ export default function Home() {
               <div className="w-12 h-12 bg-[#2563eb] rounded-lg flex items-center justify-center mb-4">
                 <TrendingUp className="text-white" size={24} />
               </div>
-              <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">Flexible Income</h3>
+              <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">Fast & Reliable</h3>
               <p className="text-gray-600">
-                Earn competitive rates with flexible working hours. Choose when and where you work.
+                Get to your destination quickly with our professional riders and optimized routes.
               </p>
             </div>
 
@@ -88,9 +85,9 @@ export default function Home() {
               <div className="w-12 h-12 bg-[#2563eb] rounded-lg flex items-center justify-center mb-4">
                 <Users className="text-white" size={24} />
               </div>
-              <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">Community Support</h3>
+              <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">Affordable Prices</h3>
               <p className="text-gray-600">
-                Join a thriving community of riders. Get support, tips, and opportunities to grow.
+                Competitive pricing with transparent rates. No hidden charges or surprise fees.
               </p>
             </div>
 
@@ -101,16 +98,16 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">Easy to Use App</h3>
               <p className="text-gray-600">
-                Our intuitive app makes it simple to accept rides, track earnings, and manage your account.
+                Book rides and track deliveries with our intuitive mobile app. Available on iOS and Android.
               </p>
             </div>
           </div>
 
-          {/* Apply Now Button */}
+          {/* Contact Button */}
           <div className="text-center mt-12">
-            <button className="btn-primary text-lg px-8 py-4">
-              Apply Now →
-            </button>
+            <Link href="/contact" className="btn-primary text-lg px-8 py-4 inline-block">
+              Get Started →
+            </Link>
             <p className="text-gray-600 mt-4">
               <Phone size={18} className="inline mr-2" />
               +92 313 4666615
@@ -164,9 +161,9 @@ export default function Home() {
             <div>
               <h4 className="font-bold text-white mb-4">Services</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Become a Rider</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Book a Ride</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Courier Service</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Track Order</a></li>
               </ul>
             </div>
 

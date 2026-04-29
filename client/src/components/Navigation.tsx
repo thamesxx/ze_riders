@@ -31,9 +31,6 @@ export default function Navigation() {
           <Link href="/contact" className="text-gray-700 hover:text-[#2563eb] font-medium transition-colors">
             Contact Us
           </Link>
-          <a href="#" className="btn-primary inline-block">
-            Become a Rider
-          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -63,9 +60,6 @@ export default function Navigation() {
             <Link href="/contact" className="block text-gray-700 hover:text-[#2563eb] font-medium transition-colors py-2">
               Contact Us
             </Link>
-            <a href="#" className="btn-primary block text-center">
-              Become a Rider
-            </a>
           </div>
         </div>
       )}

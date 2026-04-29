@@ -313,9 +313,9 @@ export default function Contact() {
             <div>
               <h4 className="font-bold text-white mb-4">Services</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Become a Rider</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Book a Ride</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Courier Service</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Track Order</a></li>
               </ul>
             </div>
 
