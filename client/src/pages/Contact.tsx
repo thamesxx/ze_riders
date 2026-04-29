@@ -170,18 +170,6 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Email */}
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 bg-[#2563eb] rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="text-white" size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-[#1a1a1a] mb-1">Email</h3>
-                    <p className="text-gray-600">info@zerider.com</p>
-                    <p className="text-gray-500 text-sm">We'll respond within 24 hours</p>
-                  </div>
-                </div>
-
                 {/* Address */}
                 <div className="flex gap-4">
                   <div className="w-12 h-12 bg-[#2563eb] rounded-lg flex items-center justify-center flex-shrink-0">
@@ -328,9 +316,6 @@ export default function Contact() {
                 </li>
                 <li className="text-gray-400">
                   <span>📞 021-34491808 (PTCL)</span>
-                </li>
-                <li className="text-gray-400">
-                  <span>📧 info@zerider.com</span>
                 </li>
                 <li className="text-gray-400">
                   <span>📍 Malir Cantt, 4 Dots, Karachi, Pakistan</span>

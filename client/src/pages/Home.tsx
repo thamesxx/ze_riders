@@ -26,27 +26,7 @@ export default function Home() {
                 Fast, reliable, and affordable motorcycle rides and courier delivery services in your city.
               </p>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <a
-                  href="https://apps.apple.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-all"
-                >
-                  <Apple size={20} /> App Store
-                </a>
-                <a
-                  href="https://play.google.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-all"
-                >
-                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M3 13.5v8.25A1.5 1.5 0 004.5 23h15a1.5 1.5 0 001.5-1.5V13.5M1 5.5C1 4.119 2.119 3 3.5 3h17C21.881 3 23 4.119 23 5.5v6c0 1.381-1.119 2.5-2.5 2.5h-17C2.119 14 1 12.881 1 11.5v-6z"/>
-                  </svg> Google Play
-                </a>
-              </div>
+
 
               {/* Contact Info */}
               <div className="flex flex-col gap-3 text-white">
@@ -190,10 +170,6 @@ export default function Home() {
                 <li className="flex items-center gap-2 text-gray-400">
                   <Phone size={16} />
                   <span>021-34491808 (PTCL)</span>
-                </li>
-                <li className="flex items-center gap-2 text-gray-400">
-                  <Mail size={16} />
-                  <span>info@zerider.com</span>
                 </li>
                 <li className="flex items-start gap-2 text-gray-400">
                   <MapPin size={16} className="mt-1" />

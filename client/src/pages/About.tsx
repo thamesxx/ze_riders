@@ -37,7 +37,7 @@ export default function About() {
                 We are your trusted ride-hailing and courier delivery service, dedicated to providing reliable, safe, and affordable rides and deliveries. Our platform connects motorcycle riders with customers, ensuring fast and dependable service.
               </p>
               <p className="text-gray-600 text-lg mb-4">
-                Our mission is to empower riders with flexible earning opportunities while delivering exceptional service to our customers. We believe in building a sustainable, community-driven platform that benefits everyone.
+                Our mission is to deliver exceptional service to our customers through reliable, fast, and affordable ride-hailing and courier services. We believe in building a sustainable, customer-driven platform that prioritizes your needs.
               </p>
               <p className="text-gray-600 text-lg">
                 With years of experience in the ride-sharing and delivery industry, we've built a reputation for reliability, safety, and customer satisfaction.
@@ -69,10 +69,10 @@ export default function About() {
                 <Zap className="text-white" size={32} />
               </div>
               <h3 className="text-2xl font-bold text-[#1a1a1a] mb-3">
-                Empowering Riders
+                Customer First
               </h3>
               <p className="text-gray-600">
-                Provide flexible earning opportunities with competitive rates, benefits, and support systems that help riders thrive.
+                Prioritize customer satisfaction with responsive support, transparent pricing, and reliable service that exceeds expectations.
               </p>
             </div>
 
@@ -240,9 +240,6 @@ export default function About() {
                 </li>
                 <li className="text-gray-400">
                   <span>📞 021-34491808 (PTCL)</span>
-                </li>
-                <li className="text-gray-400">
-                  <span>📧 info@zerider.com</span>
                 </li>
                 <li className="text-gray-400">
                   <span>📍 Malir Cantt, 4 Dots, Karachi, Pakistan</span>
