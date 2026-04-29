@@ -26,7 +26,10 @@ export default function Home() {
                 Fast, reliable, and affordable motorcycle rides and courier delivery services in your city.
               </p>
 
-
+              {/* Book Now Button */}
+              <button className="bg-[#2563eb] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1d4ed8] transition-all mb-8 inline-block">
+                Book Now
+              </button>
 
               {/* Contact Info */}
               <div className="flex flex-col gap-3 text-white">
@@ -92,7 +95,7 @@ export default function Home() {
           {/* Contact Button */}
           <div className="text-center mt-12">
             <Link href="/contact" className="btn-primary text-lg px-8 py-4 inline-block">
-              Get Started →
+              Book Now →
             </Link>
             <p className="text-gray-600 mt-4 flex flex-col gap-2">
               <span className="flex items-center">

@@ -173,14 +173,9 @@ export default function About() {
           <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
             Whether you want to earn as a rider or book reliable transportation, Ze Rider is here for you.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="btn-primary">
-              Become a Rider
-            </button>
-            <Link href="/contact" className="px-6 py-3 border-2 border-[#2563eb] text-[#2563eb] font-semibold rounded-lg hover:bg-[#2563eb] hover:text-white transition-all inline-block">
-              Get in Touch
-            </Link>
-          </div>
+          <Link href="/contact" className="px-8 py-3 bg-[#2563eb] text-white font-semibold rounded-lg hover:bg-[#1d4ed8] transition-all inline-block">
+            Book Now
+          </Link>
         </div>
       </section>
 

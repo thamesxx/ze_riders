@@ -64,9 +64,12 @@ export default function Contact() {
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
               Contact Us
             </h1>
-            <p className="text-xl text-gray-100 max-w-2xl">
+            <p className="text-xl text-gray-100 max-w-2xl mb-8">
               Get in touch with us. We're here to help and answer any questions you might have.
             </p>
+            <button className="bg-[#2563eb] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1d4ed8] transition-all inline-block">
+              Book Now
+            </button>
           </div>
         </div>
       </section>
@@ -249,13 +252,13 @@ export default function Contact() {
       <section className="dark-section py-16">
         <div className="container text-center">
           <h2 className="text-4xl font-bold mb-6">
-            Still Have Questions?
+            Ready to Book Your Ride?
           </h2>
           <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-            Our support team is ready to help. Reach out to us via phone, email, or visit our office.
+            Download our app or call us to book your ride today. Fast, reliable, and affordable service.
           </p>
           <button className="btn-primary">
-            Contact Support
+            Book Now
           </button>
         </div>
       </section>
