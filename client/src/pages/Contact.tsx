@@ -93,21 +93,21 @@ export default function Contact() {
       {/* Hero Section */}
       <section className="relative w-full h-[500px] overflow-hidden">
         <img
-          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663596086202/YvPzrgTJTNVygv8TaE4iFd/contact-hero-branded-gpSqEeGRXBWGxvEFmEWCjS.webp"
-          alt="Ze Rider branded riders"
+          src="/manus-storage/contact-hero-bg_26757d7d.png"
+          alt="Get in Touch - Ze Riders Contact"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
 
         <div className="absolute inset-0 flex items-center">
           <div className="container">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
               Contact Us
             </h1>
-            <p className="text-xl text-gray-100 max-w-2xl mb-8">
+            <p className="text-xl text-gray-100 max-w-2xl mb-8 drop-shadow-md">
               Get in touch with us. We're here to help and answer any questions you might have.
             </p>
-            <button className="bg-[#2563eb] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1d4ed8] transition-all inline-block">
+            <button className="bg-[#2563eb] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1d4ed8] transition-all inline-block hover:shadow-lg hover:scale-105 duration-300">
               Book Now
             </button>
           </div>
