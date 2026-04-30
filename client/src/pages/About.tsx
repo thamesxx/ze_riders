@@ -46,8 +46,8 @@ export default function About() {
 
             <div className="bg-gray-50 p-8 rounded-lg">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663596086202/YvPzrgTJTNVygv8TaE4iFd/hero-about-L3rQAWGhd8P486s2UgCrVW.webp"
-                alt="Team"
+                src="/manus-storage/who-we-are-image_94f99c35.png"
+                alt="Ze Riders Team - About Us"
                 className="w-full rounded-lg"
               />
             </div>
