@@ -26,32 +26,13 @@ export default function About() {
       </section>
 
       {/* Who We Are Section */}
-      <section className="py-16 bg-white">
-        <div className="container">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl font-bold text-[#1a1a1a] mb-6">
-                Who We Are
-              </h2>
-              <p className="text-gray-600 text-lg mb-4">
-                We are your trusted ride-hailing and courier delivery service, dedicated to providing reliable, safe, and affordable rides and deliveries. Our platform connects motorcycle riders with customers, ensuring fast and dependable service.
-              </p>
-              <p className="text-gray-600 text-lg mb-4">
-                Our mission is to deliver exceptional service to our customers through reliable, fast, and affordable ride-hailing and courier services. We believe in building a sustainable, customer-driven platform that prioritizes your needs.
-              </p>
-              <p className="text-gray-600 text-lg">
-                With years of experience in the ride-sharing and delivery industry, we've built a reputation for reliability, safety, and customer satisfaction.
-              </p>
-            </div>
-
-            <div className="bg-gray-50 p-8 rounded-lg">
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663596086202/YvPzrgTJTNVygv8TaE4iFd/hero-about-L3rQAWGhd8P486s2UgCrVW.webp"
-                alt="Team"
-                className="w-full rounded-lg"
-              />
-            </div>
-          </div>
+      <section className="py-0 bg-white">
+        <div className="w-full">
+          <img
+            src="/manus-storage/about-who-we-are_b7fd3ba9.png"
+            alt="About Ze Riders - Who We Are"
+            className="w-full h-auto"
+          />
         </div>
       </section>
 
