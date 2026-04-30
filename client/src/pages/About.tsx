@@ -7,19 +7,19 @@ export default function About() {
       {/* Hero Section */}
       <section className="relative w-full h-[500px] overflow-hidden">
         <img
-          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663596086202/YvPzrgTJTNVygv8TaE4iFd/hero-about-L3rQAWGhd8P486s2UgCrVW.webp"
-          alt="Professional motorcycle riders"
-          className="absolute inset-0 w-full h-full object-cover"
+          src="/manus-storage/about-hero-rider_30956df6.png"
+          alt="Ze Rider courier with delivery box and route map"
+          className="absolute inset-0 w-full h-full object-cover object-right"
         />
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
 
         <div className="absolute inset-0 flex items-center">
           <div className="container">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
               About Us
             </h1>
-            <p className="text-xl text-gray-100 max-w-2xl">
-              Learn more about our mission to empower riders and deliver excellence.
+            <p className="text-xl text-gray-100 max-w-2xl drop-shadow-md">
+              Learn more about our mission to deliver excellence and customer satisfaction.
             </p>
           </div>
         </div>
