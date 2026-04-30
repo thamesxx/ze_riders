@@ -19,27 +19,33 @@ export default function Home() {
         <div className="absolute inset-0 flex items-center">
           <div className="container">
             <div className="max-w-2xl">
-              <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
+              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
                 Your Trusted Ride-Hailing Service
               </h1>
-              <p className="text-lg text-gray-100 mb-8">
-                Fast, reliable, and affordable motorcycle rides and courier delivery services in your city.
-              </p>
+              
+              {/* Glassy Card for Description */}
+              <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-6 mb-8 shadow-2xl hover:bg-white/15 transition-all duration-300">
+                <p className="text-lg text-white font-medium leading-relaxed">
+                  Fast, reliable, and affordable motorcycle rides and courier delivery services in your city.
+                </p>
+              </div>
 
               {/* Book Now Button */}
-              <button className="bg-[#2563eb] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1d4ed8] transition-all mb-8 inline-block">
+              <button className="bg-[#2563eb] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1d4ed8] transition-all mb-8 inline-block shadow-lg hover:shadow-xl hover:scale-105 transform">
                 Book Now
               </button>
 
-              {/* Contact Info */}
-              <div className="flex flex-col gap-3 text-white">
-                <div className="flex items-center gap-2">
-                  <Phone size={20} />
-                  <span className="text-lg font-semibold">+92 314 2560770</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Phone size={20} />
-                  <span className="text-lg font-semibold">021-34491808 (PTCL)</span>
+              {/* Contact Info - Glassy Style */}
+              <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-xl p-4 w-fit shadow-lg">
+                <div className="flex flex-col gap-3 text-white">
+                  <div className="flex items-center gap-2">
+                    <Phone size={20} className="text-[#2563eb]" />
+                    <span className="text-lg font-semibold">+92 314 2560770</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Phone size={20} className="text-[#2563eb]" />
+                    <span className="text-lg font-semibold">021-34491808 (PTCL)</span>
+                  </div>
                 </div>
               </div>
             </div>
