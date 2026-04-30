@@ -6,7 +6,7 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+    <header className="sticky top-0 z-50 bg-[#d3e4fa]/80 backdrop-blur-md border-b border-[#2563eb]/20 shadow-lg">
       <nav className="container flex items-center justify-between py-4">
         {/* Logo with provided image */}
         <Link href="/">
