@@ -10,7 +10,7 @@ export default function Navigation() {
       <nav className="container flex items-center justify-between py-4">
         {/* Logo with provided image */}
         <Link href="/">
-          <div className="flex items-center gap-2 cursor-pointer">
+          <div className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity duration-300">
             <img
               src="/manus-storage/ze-rider-logo_4e569ae3.jpg"
               alt="Ze Rider Logo"
@@ -22,43 +22,64 @@ export default function Navigation() {
 
         {/* Desktop Navigation Links */}
         <div className="hidden md:flex items-center gap-8">
-          <Link href="/" className="text-gray-700 hover:text-[#2563eb] font-medium transition-colors">
-            Home
+          <Link href="/">
+            <div className="relative text-gray-700 font-medium group cursor-pointer">
+              <span className="transition-all duration-300 group-hover:text-[#2563eb] group-hover:scale-110 inline-block">
+                Home
+              </span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#2563eb] to-[#1e40af] group-hover:w-full transition-all duration-300"></span>
+            </div>
           </Link>
-          <Link href="/about" className="text-gray-700 hover:text-[#2563eb] font-medium transition-colors">
-            About Us
+          <Link href="/about">
+            <div className="relative text-gray-700 font-medium group cursor-pointer">
+              <span className="transition-all duration-300 group-hover:text-[#2563eb] group-hover:scale-110 inline-block">
+                About Us
+              </span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#2563eb] to-[#1e40af] group-hover:w-full transition-all duration-300"></span>
+            </div>
           </Link>
-          <Link href="/contact" className="text-gray-700 hover:text-[#2563eb] font-medium transition-colors">
-            Contact Us
+          <Link href="/contact">
+            <div className="relative text-gray-700 font-medium group cursor-pointer">
+              <span className="transition-all duration-300 group-hover:text-[#2563eb] group-hover:scale-110 inline-block">
+                Contact Us
+              </span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#2563eb] to-[#1e40af] group-hover:w-full transition-all duration-300"></span>
+            </div>
           </Link>
         </div>
 
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+          className="md:hidden p-2 hover:bg-[#2563eb]/20 rounded-lg transition-all duration-300 hover:scale-110"
           aria-label="Toggle menu"
         >
           {isOpen ? (
-            <X size={24} className="text-gray-700" />
+            <X size={24} className="text-[#2563eb] transition-colors duration-300" />
           ) : (
-            <Menu size={24} className="text-gray-700" />
+            <Menu size={24} className="text-gray-700 hover:text-[#2563eb] transition-colors duration-300" />
           )}
         </button>
       </nav>
 
       {/* Mobile Navigation Menu */}
       {isOpen && (
-        <div className="md:hidden border-t border-gray-200 bg-white">
-          <div className="container py-4 space-y-4">
-            <Link href="/" className="block text-gray-700 hover:text-[#2563eb] font-medium transition-colors py-2">
-              Home
+        <div className="md:hidden border-t border-[#2563eb]/20 bg-[#d3e4fa]/50 backdrop-blur-md animate-in fade-in slide-in-from-top-2 duration-300">
+          <div className="container py-4 space-y-2">
+            <Link href="/">
+              <div className="block text-gray-700 font-medium transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/60 hover:text-[#2563eb] hover:shadow-md hover:translate-x-1">
+                Home
+              </div>
             </Link>
-            <Link href="/about" className="block text-gray-700 hover:text-[#2563eb] font-medium transition-colors py-2">
-              About Us
+            <Link href="/about">
+              <div className="block text-gray-700 font-medium transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/60 hover:text-[#2563eb] hover:shadow-md hover:translate-x-1">
+                About Us
+              </div>
             </Link>
-            <Link href="/contact" className="block text-gray-700 hover:text-[#2563eb] font-medium transition-colors py-2">
-              Contact Us
+            <Link href="/contact">
+              <div className="block text-gray-700 font-medium transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/60 hover:text-[#2563eb] hover:shadow-md hover:translate-x-1">
+                Contact Us
+              </div>
             </Link>
           </div>
         </div>
