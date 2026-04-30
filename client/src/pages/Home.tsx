@@ -8,12 +8,12 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative w-full h-[600px] overflow-hidden">
         <img
-          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663596086202/YvPzrgTJTNVygv8TaE4iFd/hero-home-J2Vgfa8QRdJR78SSZh4E2o.webp"
-          alt="Motorcycle riders in urban setting"
+          src="/manus-storage/home-hero-rider_aa238092.jpeg"
+          alt="Ze Rider courier on motorcycle with delivery box"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        {/* Light overlay for text contrast */}
+        <div className="absolute inset-0 bg-black/20"></div>
 
         {/* Hero Content */}
         <div className="absolute inset-0 flex items-center">
