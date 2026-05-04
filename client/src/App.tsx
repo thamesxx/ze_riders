@@ -9,8 +9,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Navigation from "./components/Navigation";
 
-
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <>
       <Navigation />

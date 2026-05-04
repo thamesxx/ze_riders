@@ -29,7 +29,7 @@ export default function About() {
       <section className="py-16 bg-white">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="bg-white/80 backdrop-blur-md border border-white/30 p-8 rounded-xl shadow-lg">
               <h2 className="text-4xl font-bold text-[#1a1a1a] mb-6">
                 Who We Are
               </h2>
@@ -204,15 +204,6 @@ export default function About() {
             </div>
 
             <div>
-              <h4 className="font-bold text-white mb-4">Services</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Book a Ride</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Courier Service</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Track Order</a></li>
-              </ul>
-            </div>
-
-            <div>
               <h4 className="font-bold text-white mb-4">Contact</h4>
               <ul className="space-y-3">
                 <li className="text-gray-400">
@@ -223,6 +214,9 @@ export default function About() {
                 </li>
                 <li className="text-gray-400">
                   <span>📍 Malir Cantt, 4 Dots, Karachi, Pakistan</span>
+                </li>
+                <li className="text-gray-400">
+                  <span>📧 COOZebickriders@gmail.com</span>
                 </li>
               </ul>
             </div>

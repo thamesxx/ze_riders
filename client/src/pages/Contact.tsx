@@ -3,12 +3,14 @@ import { Link } from "wouter";
 import { Phone, Mail, MapPin, ChevronDown } from "lucide-react";
 import { toast } from "sonner";
 import { MapView } from "@/components/Map";
+import { trpc } from "@/lib/trpc";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: "",
+    fullName: "",
     email: "",
     phone: "",
+    subject: "",
     message: "",
   });
 
@@ -19,12 +21,18 @@ export default function Contact() {
     email: "",
     phone: "",
     address: "",
-    position: "",
-    drivingLicense: "",
-    declaration: false,
+    positionAppliedFor: "",
+    hasDrivingLicense: "",
+    declarationAgreed: false,
   });
 
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
+  const [contactSubmitting, setContactSubmitting] = useState(false);
+  const [jobSubmitting, setJobSubmitting] = useState(false);
+
+  // tRPC mutations
+  const submitContactMutation = trpc.forms.submitContact.useMutation();
+  const submitJobApplicationMutation = trpc.forms.submitJobApplication.useMutation();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -39,30 +47,75 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Message sent! We'll get back to you soon.");
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    setContactSubmitting(true);
+
+    try {
+      await submitContactMutation.mutateAsync({
+        fullName: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+        subject: formData.subject,
+        message: formData.message,
+      });
+
+      toast.success("Message sent! We'll get back to you soon.");
+      setFormData({ fullName: "", email: "", phone: "", subject: "", message: "" });
+    } catch (error) {
+      console.error("Error submitting contact form:", error);
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setContactSubmitting(false);
+    }
   };
 
-  const handleJobSubmit = (e: React.FormEvent) => {
+  const handleJobSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!jobFormData.declaration) {
+
+    if (!jobFormData.declarationAgreed) {
       toast.error("Please agree to the declaration.");
       return;
     }
-    toast.success("Application submitted! We'll review and get back to you soon.");
-    setJobFormData({
-      fullName: "",
-      dateOfBirth: "",
-      cnic: "",
-      email: "",
-      phone: "",
-      address: "",
-      position: "",
-      drivingLicense: "",
-      declaration: false,
-    });
+
+    if (!jobFormData.hasDrivingLicense) {
+      toast.error("Please select whether you have a driving license.");
+      return;
+    }
+
+    setJobSubmitting(true);
+
+    try {
+      await submitJobApplicationMutation.mutateAsync({
+        fullName: jobFormData.fullName,
+        dateOfBirth: jobFormData.dateOfBirth,
+        cnic: jobFormData.cnic,
+        email: jobFormData.email,
+        phone: jobFormData.phone,
+        address: jobFormData.address,
+        positionAppliedFor: jobFormData.positionAppliedFor,
+        hasDrivingLicense: jobFormData.hasDrivingLicense as "yes" | "no",
+        declarationAgreed: jobFormData.declarationAgreed,
+      });
+
+      toast.success("Application submitted! We'll review and get back to you soon.");
+      setJobFormData({
+        fullName: "",
+        dateOfBirth: "",
+        cnic: "",
+        email: "",
+        phone: "",
+        address: "",
+        positionAppliedFor: "",
+        hasDrivingLicense: "",
+        declarationAgreed: false,
+      });
+    } catch (error) {
+      console.error("Error submitting job application:", error);
+      toast.error("Failed to submit application. Please try again.");
+    } finally {
+      setJobSubmitting(false);
+    }
   };
 
   const faqs = [
@@ -91,15 +144,10 @@ export default function Contact() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
-      <section className="relative w-full h-[500px] overflow-hidden">
-        <img
-          src="/manus-storage/contact-hero-bg_26757d7d.png"
-          alt="Get in Touch - Ze Riders Contact"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+      <section className="relative w-full bg-cover bg-center py-32" style={{backgroundImage: 'url(/manus-storage/contact-hero-bg_26757d7d.png)'}}>
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
 
-        <div className="absolute inset-0 flex items-center">
+        <div className="relative flex items-center z-10">
           <div className="container">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
               Contact Us
@@ -119,7 +167,7 @@ export default function Contact() {
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div>
+            <div className="bg-white/80 backdrop-blur-md border border-white/30 p-8 rounded-xl shadow-lg">
               <h2 className="text-3xl font-bold text-[#1a1a1a] mb-8">
                 Send Us a Message
               </h2>
@@ -131,11 +179,27 @@ export default function Contact() {
                   </label>
                   <input
                     type="text"
-                    name="name"
-                    value={formData.name}
+                    name="fullName"
+                    value={formData.fullName}
                     onChange={handleChange}
+                    required
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
                     placeholder="Enter your name"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-[#1a1a1a] mb-2">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
+                    placeholder="Enter your email"
                   />
                 </div>
 
@@ -148,8 +212,24 @@ export default function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
+                    required
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
                     placeholder="Enter your phone number"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-[#1a1a1a] mb-2">
+                    Subject
+                  </label>
+                  <input
+                    type="text"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
+                    placeholder="Enter subject"
                   />
                 </div>
 
@@ -162,6 +242,7 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
+                    required
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb] resize-none"
                     placeholder="Enter your message"
                   ></textarea>
@@ -169,9 +250,10 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full bg-[#2563eb] text-white font-semibold py-3 rounded-lg hover:bg-[#1d4ed8] transition-all"
+                  disabled={contactSubmitting}
+                  className="w-full bg-[#2563eb] text-white font-semibold py-3 rounded-lg hover:bg-[#1d4ed8] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {contactSubmitting ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </div>
@@ -369,8 +451,8 @@ export default function Contact() {
                     <label className="block text-sm font-semibold text-[#1a1a1a] mb-2">Position Applied For *</label>
                     <input
                       type="text"
-                      name="position"
-                      value={jobFormData.position}
+                      name="positionAppliedFor"
+                      value={jobFormData.positionAppliedFor}
                       onChange={handleJobChange}
                       required
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
@@ -384,9 +466,9 @@ export default function Contact() {
                       <label className="flex items-center gap-2">
                         <input
                           type="radio"
-                          name="drivingLicense"
+                          name="hasDrivingLicense"
                           value="yes"
-                          checked={jobFormData.drivingLicense === "yes"}
+                          checked={jobFormData.hasDrivingLicense === "yes"}
                           onChange={handleJobChange}
                           className="w-4 h-4"
                         />
@@ -395,9 +477,9 @@ export default function Contact() {
                       <label className="flex items-center gap-2">
                         <input
                           type="radio"
-                          name="drivingLicense"
+                          name="hasDrivingLicense"
                           value="no"
-                          checked={jobFormData.drivingLicense === "no"}
+                          checked={jobFormData.hasDrivingLicense === "no"}
                           onChange={handleJobChange}
                           className="w-4 h-4"
                         />
@@ -417,8 +499,8 @@ export default function Contact() {
                 <label className="flex items-center gap-2">
                   <input
                     type="checkbox"
-                    name="declaration"
-                    checked={jobFormData.declaration}
+                    name="declarationAgreed"
+                    checked={jobFormData.declarationAgreed}
                     onChange={handleJobChange}
                     required
                     className="w-4 h-4"
@@ -427,26 +509,15 @@ export default function Contact() {
                 </label>
               </div>
 
-              <button type="submit" className="w-full bg-[#2563eb] text-white font-semibold py-3 rounded-lg hover:bg-[#1d4ed8] transition-all">
-                Join Now
+              <button
+                type="submit"
+                disabled={jobSubmitting}
+                className="w-full bg-[#2563eb] text-white font-semibold py-3 rounded-lg hover:bg-[#1d4ed8] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {jobSubmitting ? "Submitting..." : "Join Now"}
               </button>
             </form>
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="dark-section py-16">
-        <div className="container text-center">
-          <h2 className="text-4xl font-bold mb-6">
-            Ready to Book Your Ride?
-          </h2>
-          <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-            Download our app or call us to book your ride today. Fast, reliable, and affordable service.
-          </p>
-          <button className="btn-primary">
-            Book Now
-          </button>
         </div>
       </section>
 
@@ -490,15 +561,6 @@ export default function Contact() {
             </div>
 
             <div>
-              <h4 className="font-bold text-white mb-4">Services</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Book a Ride</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Courier Service</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Track Order</a></li>
-              </ul>
-            </div>
-
-            <div>
               <h4 className="font-bold text-white mb-4">Contact</h4>
               <ul className="space-y-3">
                 <li className="text-gray-400">
@@ -509,6 +571,9 @@ export default function Contact() {
                 </li>
                 <li className="text-gray-400">
                   <span>📍 Malir Cantt, 4 Dots, Karachi, Pakistan</span>
+                </li>
+                <li className="text-gray-400">
+                  <span>📧 COOZebickriders@gmail.com</span>
                 </li>
               </ul>
             </div>

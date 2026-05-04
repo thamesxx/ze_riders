@@ -1,8 +1,13 @@
+import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Phone, MapPin, Mail, Smartphone, TrendingUp, Users, Apple } from "lucide-react";
 
 export default function Home() {
+  // The userAuth hooks provides authentication state
+  // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
+  let { user, loading, error, isAuthenticated, logout } = useAuth();
+
   return (
     <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
@@ -158,16 +163,6 @@ export default function Home() {
               </ul>
             </div>
 
-            {/* Services */}
-            <div>
-              <h4 className="font-bold text-white mb-4">Services</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Book a Ride</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Courier Service</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-[#2563eb] transition-colors">Track Order</a></li>
-              </ul>
-            </div>
-
             {/* Contact */}
             <div>
               <h4 className="font-bold text-white mb-4">Contact</h4>
@@ -183,6 +178,10 @@ export default function Home() {
                 <li className="flex items-start gap-2 text-gray-400">
                   <MapPin size={16} className="mt-1" />
                   <span>Malir Cantt, 4 Dots, Karachi, Pakistan</span>
+                </li>
+                <li className="flex items-center gap-2 text-gray-400">
+                  <Mail size={16} />
+                  <span>COOZebickriders@gmail.com</span>
                 </li>
               </ul>
             </div>
