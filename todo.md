@@ -36,3 +36,11 @@
 - Need to perform end-to-end testing of form submissions through browser UI
 - Glassy effects applied to Contact form but not consistently across all sections
 - 9 vitest tests written for form procedures, all passing
+
+## New Tasks - Hero Section Styling
+- [x] Update About Us page hero with glassy frosted glass effect matching Home page style
+- [x] Update Contact Us page hero with glassy frosted glass effect matching Home page style
+- [x] Add large white headings to About and Contact hero sections
+- [x] Add glassy description cards to About and Contact pages
+- [x] Add action buttons (Book Now) to About and Contact hero sections
+- [x] Verify consistent styling across all three pages

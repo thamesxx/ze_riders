@@ -1,26 +1,36 @@
-import { Link } from "wouter";
 import { Zap, Globe, Heart } from "lucide-react";
 
 export default function About() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
-      <section className="relative w-full h-[500px] overflow-hidden">
+      <section className="relative w-full h-[600px] overflow-hidden">
         <img
           src="/manus-storage/about-hero-rider_30956df6.png"
           alt="Ze Rider courier with delivery box and route map"
           className="absolute inset-0 w-full h-full object-cover object-right"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
+        <div className="absolute inset-0 bg-black/20"></div>
 
         <div className="absolute inset-0 flex items-center">
           <div className="container">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
-              About Us
-            </h1>
-            <p className="text-xl text-gray-100 max-w-2xl drop-shadow-md">
-              Learn more about our mission to deliver excellence and customer satisfaction.
-            </p>
+            <div className="max-w-2xl">
+              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+                About Us
+              </h1>
+              
+              {/* Glassy Card for Description */}
+              <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-6 mb-8 shadow-2xl hover:bg-white/15 transition-all duration-300">
+                <p className="text-lg text-white font-medium leading-relaxed">
+                  Learn more about our mission to deliver excellence and customer satisfaction.
+                </p>
+              </div>
+
+              {/* Book Now Button */}
+              <button className="bg-[#2563eb] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1d4ed8] transition-all mb-8 inline-block shadow-lg hover:shadow-xl hover:scale-105 transform">
+                Book Now
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -154,9 +164,33 @@ export default function About() {
                 <span className="text-white font-bold">✓</span>
               </div>
               <div>
-                <h3 className="text-xl font-bold text-[#1a1a1a] mb-2">Easy Onboarding</h3>
+                <h3 className="text-xl font-bold text-[#1a1a1a] mb-2">Real-Time Tracking</h3>
                 <p className="text-gray-600">
-                  Simple, quick registration process to get started earning or booking rides in minutes.
+                  Track your ride or delivery in real-time with live GPS updates and notifications.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <div className="w-8 h-8 bg-[#2563eb] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <span className="text-white font-bold">✓</span>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-[#1a1a1a] mb-2">Professional Riders</h3>
+                <p className="text-gray-600">
+                  All our riders are verified, trained, and committed to providing excellent service.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <div className="w-8 h-8 bg-[#2563eb] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <span className="text-white font-bold">✓</span>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-[#1a1a1a] mb-2">Easy Booking</h3>
+                <p className="text-gray-600">
+                  Simple and intuitive app interface for quick and hassle-free ride and delivery bookings.
                 </p>
               </div>
             </div>
@@ -186,19 +220,19 @@ export default function About() {
               <h4 className="font-bold text-white mb-4">Quick Links</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/" className="text-gray-400 hover:text-[#2563eb] transition-colors">
+                  <a href="/" className="text-gray-400 hover:text-[#2563eb] transition-colors">
                     Home
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href="/about" className="text-gray-400 hover:text-[#2563eb] transition-colors">
+                  <a href="/about" className="text-gray-400 hover:text-[#2563eb] transition-colors">
                     About Us
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-gray-400 hover:text-[#2563eb] transition-colors">
+                  <a href="/contact" className="text-gray-400 hover:text-[#2563eb] transition-colors">
                     Contact
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>

@@ -144,20 +144,28 @@ export default function Contact() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
-      <section className="relative w-full bg-cover bg-center py-32" style={{backgroundImage: 'url(/manus-storage/contact-hero-bg_26757d7d.png)'}}>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
+      <section className="relative w-full h-[600px] overflow-hidden" style={{backgroundImage: 'url(/manus-storage/contact-hero-bg_26757d7d.png)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+        <div className="absolute inset-0 bg-black/20"></div>
 
-        <div className="relative flex items-center z-10">
+        <div className="absolute inset-0 flex items-center">
           <div className="container">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
-              Contact Us
-            </h1>
-            <p className="text-xl text-gray-100 max-w-2xl mb-8 drop-shadow-md">
-              Get in touch with us. We're here to help and answer any questions you might have.
-            </p>
-            <button className="bg-[#2563eb] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1d4ed8] transition-all inline-block hover:shadow-lg hover:scale-105 duration-300">
-              Book Now
-            </button>
+            <div className="max-w-2xl">
+              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+                Contact Us
+              </h1>
+              
+              {/* Glassy Card for Description */}
+              <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-6 mb-8 shadow-2xl hover:bg-white/15 transition-all duration-300">
+                <p className="text-lg text-white font-medium leading-relaxed">
+                  Get in touch with us. We're here to help and answer any questions you might have.
+                </p>
+              </div>
+
+              {/* Book Now Button */}
+              <button className="bg-[#2563eb] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1d4ed8] transition-all mb-8 inline-block shadow-lg hover:shadow-xl hover:scale-105 transform">
+                Book Now
+              </button>
+            </div>
           </div>
         </div>
       </section>
