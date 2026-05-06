@@ -44,3 +44,15 @@
 - [x] Add glassy description cards to About and Contact pages
 - [x] Add action buttons (Book Now) to About and Contact hero sections
 - [x] Verify consistent styling across all three pages
+
+
+## New Tasks - Careers Page
+- [x] Create new Careers page component
+- [x] Move job application form from Contact page to Careers page
+- [x] Add career overview and benefits section to Careers page
+- [x] Add open positions/job listings section
+- [x] Add company culture and values section
+- [x] Update navigation to include Careers link
+- [x] Remove job application form from Contact page
+- [x] Test Careers page functionality and form submission
+- [x] Verify navigation links work correctly
