@@ -56,3 +56,14 @@
 - [x] Remove job application form from Contact page
 - [x] Test Careers page functionality and form submission
 - [x] Verify navigation links work correctly
+
+
+## New Tasks - Careers Page Updates
+- [x] Remove salary information from job listings
+- [x] Add B2B collaboration section to Careers page
+- [x] Create new Job Application page component
+- [x] Update job listings to have "Apply Now" buttons linking to application page
+- [x] Move job application form to new dedicated page
+- [x] Add B2B contact form for company collaboration inquiries
+- [x] Update routing to include new job application page
+- [x] Test all navigation and form submissions

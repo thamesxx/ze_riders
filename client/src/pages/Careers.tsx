@@ -1,80 +1,52 @@
 import { useState } from "react";
 import { Link } from "wouter";
-import { Briefcase, Users, TrendingUp, Heart, MapPin, DollarSign, Clock } from "lucide-react";
+import { Briefcase, Users, TrendingUp, Heart, MapPin, Mail, Clock } from "lucide-react";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
 
 export default function Careers() {
-  const [jobFormData, setJobFormData] = useState({
-    fullName: "",
-    dateOfBirth: "",
-    cnic: "",
+  const [b2bFormData, setB2bFormData] = useState({
+    companyName: "",
+    contactPerson: "",
     email: "",
     phone: "",
-    address: "",
-    positionAppliedFor: "",
-    hasDrivingLicense: "",
-    declarationAgreed: false,
+    collaborationDetails: "",
   });
 
-  const [jobSubmitting, setJobSubmitting] = useState(false);
+  const [b2bSubmitting, setB2bSubmitting] = useState(false);
+  const submitContactMutation = trpc.forms.submitContact.useMutation();
 
-  // tRPC mutation
-  const submitJobApplicationMutation = trpc.forms.submitJobApplication.useMutation();
-
-  const handleJobChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value, type, checked } = e.target;
-    setJobFormData((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? checked : value,
-    }));
+  const handleB2bChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setB2bFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleJobSubmit = async (e: React.FormEvent) => {
+  const handleB2bSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    if (!jobFormData.declarationAgreed) {
-      toast.error("Please agree to the declaration.");
-      return;
-    }
-
-    if (!jobFormData.hasDrivingLicense) {
-      toast.error("Please select whether you have a driving license.");
-      return;
-    }
-
-    setJobSubmitting(true);
+    setB2bSubmitting(true);
 
     try {
-      await submitJobApplicationMutation.mutateAsync({
-        fullName: jobFormData.fullName,
-        dateOfBirth: jobFormData.dateOfBirth,
-        cnic: jobFormData.cnic,
-        email: jobFormData.email,
-        phone: jobFormData.phone,
-        address: jobFormData.address,
-        positionAppliedFor: jobFormData.positionAppliedFor,
-        hasDrivingLicense: jobFormData.hasDrivingLicense as "yes" | "no",
-        declarationAgreed: jobFormData.declarationAgreed,
+      await submitContactMutation.mutateAsync({
+        fullName: b2bFormData.companyName,
+        email: b2bFormData.email,
+        phone: b2bFormData.phone,
+        subject: `B2B Collaboration Inquiry - ${b2bFormData.contactPerson}`,
+        message: b2bFormData.collaborationDetails,
       });
 
-      toast.success("Application submitted! We'll review it soon.");
-      setJobFormData({
-        fullName: "",
-        dateOfBirth: "",
-        cnic: "",
+      toast.success("Thank you! We'll review your collaboration proposal and get back to you soon.");
+      setB2bFormData({
+        companyName: "",
+        contactPerson: "",
         email: "",
         phone: "",
-        address: "",
-        positionAppliedFor: "",
-        hasDrivingLicense: "",
-        declarationAgreed: false,
+        collaborationDetails: "",
       });
     } catch (error) {
-      console.error("Error submitting job application:", error);
-      toast.error("Failed to submit application. Please try again.");
+      console.error("Error submitting B2B inquiry:", error);
+      toast.error("Failed to send inquiry. Please try again.");
     } finally {
-      setJobSubmitting(false);
+      setB2bSubmitting(false);
     }
   };
 
@@ -82,28 +54,24 @@ export default function Careers() {
     {
       title: "Motorcycle Rider",
       location: "Karachi",
-      salary: "PKR 40,000 - 60,000/month",
       type: "Full-time",
       description: "Join our fleet of professional riders and earn competitive income while providing excellent service to our customers.",
     },
     {
       title: "Delivery Executive",
       location: "Karachi",
-      salary: "PKR 35,000 - 50,000/month",
       type: "Full-time",
       description: "Manage deliveries, coordinate with customers, and ensure timely service. No motorcycle required.",
     },
     {
       title: "Customer Support Representative",
       location: "Karachi",
-      salary: "PKR 30,000 - 45,000/month",
       type: "Full-time",
       description: "Provide excellent customer service through phone, email, and chat. Help resolve customer issues and inquiries.",
     },
     {
       title: "Operations Coordinator",
       location: "Karachi",
-      salary: "PKR 35,000 - 50,000/month",
       type: "Full-time",
       description: "Coordinate daily operations, manage schedules, and ensure smooth workflow across all departments.",
     },
@@ -111,19 +79,14 @@ export default function Careers() {
 
   const benefits = [
     {
-      icon: <DollarSign className="w-8 h-8" />,
-      title: "Competitive Salary",
-      description: "Attractive compensation packages based on experience and performance.",
+      icon: <TrendingUp className="w-8 h-8" />,
+      title: "Career Growth",
+      description: "Clear career progression paths and professional development opportunities.",
     },
     {
       icon: <Heart className="w-8 h-8" />,
       title: "Health Benefits",
       description: "Comprehensive health insurance coverage for you and your family.",
-    },
-    {
-      icon: <TrendingUp className="w-8 h-8" />,
-      title: "Career Growth",
-      description: "Clear career progression paths and professional development opportunities.",
     },
     {
       icon: <Clock className="w-8 h-8" />,
@@ -139,6 +102,11 @@ export default function Careers() {
       icon: <Briefcase className="w-8 h-8" />,
       title: "Professional Training",
       description: "Ongoing training and skill development programs for all employees.",
+    },
+    {
+      icon: <Mail className="w-8 h-8" />,
+      title: "Recognition Program",
+      description: "Monthly recognition and reward programs for outstanding performers.",
     },
   ];
 
@@ -216,18 +184,17 @@ export default function Careers() {
                         <MapPin size={16} /> {job.location}
                       </span>
                       <span className="flex items-center gap-1">
-                        <DollarSign size={16} /> {job.salary}
-                      </span>
-                      <span className="flex items-center gap-1">
                         <Clock size={16} /> {job.type}
                       </span>
                     </div>
                   </div>
                 </div>
-                <p className="text-gray-600 mb-4">{job.description}</p>
-                <button className="text-[#2563eb] font-semibold hover:text-[#1d4ed8] transition-colors">
-                  Learn More →
-                </button>
+                <p className="text-gray-600 mb-6">{job.description}</p>
+                <Link href="/apply">
+                  <button className="w-full bg-[#2563eb] text-white font-semibold py-2 rounded-lg hover:bg-[#1d4ed8] transition-all">
+                    Apply Now
+                  </button>
+                </Link>
               </div>
             ))}
           </div>
@@ -290,75 +257,60 @@ export default function Careers() {
         </div>
       </section>
 
-      {/* Application Section */}
-      <section className="py-16 bg-gray-50">
+      {/* B2B Collaboration Section */}
+      <section className="py-16 bg-gradient-to-r from-[#2563eb]/10 to-[#1d4ed8]/10">
         <div className="container">
-          <div className="max-w-3xl mx-auto">
-            <div className="bg-gradient-to-r from-[#2563eb] to-[#1d4ed8] rounded-lg p-12 text-white text-center mb-12">
-              <h2 className="text-4xl font-bold mb-4">
-                Ready to Join Our Team?
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-[#1a1a1a] mb-4">
+                B2B Collaboration
               </h2>
-              <p className="text-lg text-gray-100">
-                Submit your application below and let's explore how you can grow with Ze Rider.
+              <p className="text-gray-600 text-lg">
+                Are you a business looking to partner with Ze Rider? We welcome collaboration opportunities with companies interested in logistics, delivery, or ride-sharing partnerships.
               </p>
             </div>
 
-            <form onSubmit={handleJobSubmit} className="space-y-6 bg-white p-8 rounded-lg border border-gray-200">
-              <h3 className="text-2xl font-bold text-[#1a1a1a] mb-8">Job Application Form</h3>
-              
-              {/* Applicant Details */}
-              <div>
-                <h4 className="text-lg font-bold text-[#1a1a1a] mb-4">Applicant Details</h4>
-                <div className="space-y-4">
+            <div className="bg-white rounded-lg border border-gray-200 p-8 shadow-sm">
+              <form onSubmit={handleB2bSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-semibold text-[#1a1a1a] mb-2">Full Name *</label>
+                    <label className="block text-sm font-semibold text-[#1a1a1a] mb-2">Company Name *</label>
                     <input
                       type="text"
-                      name="fullName"
-                      value={jobFormData.fullName}
-                      onChange={handleJobChange}
+                      name="companyName"
+                      value={b2bFormData.companyName}
+                      onChange={handleB2bChange}
                       required
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
-                      placeholder="Enter your full name"
+                      placeholder="Your company name"
                     />
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-semibold text-[#1a1a1a] mb-2">Date of Birth *</label>
-                      <input
-                        type="date"
-                        name="dateOfBirth"
-                        value={jobFormData.dateOfBirth}
-                        onChange={handleJobChange}
-                        required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-semibold text-[#1a1a1a] mb-2">CNIC *</label>
-                      <input
-                        type="text"
-                        name="cnic"
-                        value={jobFormData.cnic}
-                        onChange={handleJobChange}
-                        required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
-                        placeholder="Enter your CNIC"
-                      />
-                    </div>
+                  <div>
+                    <label className="block text-sm font-semibold text-[#1a1a1a] mb-2">Contact Person *</label>
+                    <input
+                      type="text"
+                      name="contactPerson"
+                      value={b2bFormData.contactPerson}
+                      onChange={handleB2bChange}
+                      required
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
+                      placeholder="Your name"
+                    />
                   </div>
+                </div>
 
+                <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-semibold text-[#1a1a1a] mb-2">Email Address *</label>
                     <input
                       type="email"
                       name="email"
-                      value={jobFormData.email}
-                      onChange={handleJobChange}
+                      value={b2bFormData.email}
+                      onChange={handleB2bChange}
                       required
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
-                      placeholder="Enter your email"
+                      placeholder="your.email@company.com"
                     />
                   </div>
 
@@ -367,103 +319,37 @@ export default function Careers() {
                     <input
                       type="tel"
                       name="phone"
-                      value={jobFormData.phone}
-                      onChange={handleJobChange}
+                      value={b2bFormData.phone}
+                      onChange={handleB2bChange}
                       required
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
-                      placeholder="Enter your phone number"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-[#1a1a1a] mb-2">Address *</label>
-                    <input
-                      type="text"
-                      name="address"
-                      value={jobFormData.address}
-                      onChange={handleJobChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
-                      placeholder="Enter your address"
+                      placeholder="+92 3XX XXXXXXX"
                     />
                   </div>
                 </div>
-              </div>
 
-              {/* Job Information */}
-              <div>
-                <h4 className="text-lg font-bold text-[#1a1a1a] mb-4">Job Information</h4>
-                <div className="space-y-4">
-                  <div>
-                    <label className="block text-sm font-semibold text-[#1a1a1a] mb-2">Position Applied For *</label>
-                    <input
-                      type="text"
-                      name="positionAppliedFor"
-                      value={jobFormData.positionAppliedFor}
-                      onChange={handleJobChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
-                      placeholder="Enter position you're applying for"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-[#1a1a1a] mb-2">Do you have a valid driving license? *</label>
-                    <div className="flex gap-6">
-                      <label className="flex items-center gap-2">
-                        <input
-                          type="radio"
-                          name="hasDrivingLicense"
-                          value="yes"
-                          checked={jobFormData.hasDrivingLicense === "yes"}
-                          onChange={handleJobChange}
-                          className="w-4 h-4"
-                        />
-                        <span className="text-[#1a1a1a]">Yes</span>
-                      </label>
-                      <label className="flex items-center gap-2">
-                        <input
-                          type="radio"
-                          name="hasDrivingLicense"
-                          value="no"
-                          checked={jobFormData.hasDrivingLicense === "no"}
-                          onChange={handleJobChange}
-                          className="w-4 h-4"
-                        />
-                        <span className="text-[#1a1a1a]">No</span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Declaration */}
-              <div>
-                <h4 className="text-lg font-bold text-[#1a1a1a] mb-4">Declaration</h4>
-                <p className="text-gray-600 mb-4">
-                  I hereby declare that the information provided is true and correct to the best of my knowledge.
-                </p>
-                <label className="flex items-center gap-2">
-                  <input
-                    type="checkbox"
-                    name="declarationAgreed"
-                    checked={jobFormData.declarationAgreed}
-                    onChange={handleJobChange}
+                <div>
+                  <label className="block text-sm font-semibold text-[#1a1a1a] mb-2">Collaboration Details *</label>
+                  <textarea
+                    name="collaborationDetails"
+                    value={b2bFormData.collaborationDetails}
+                    onChange={handleB2bChange}
                     required
-                    className="w-4 h-4"
+                    rows={5}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563eb]"
+                    placeholder="Tell us about your collaboration proposal, partnership ideas, or business inquiry..."
                   />
-                  <span className="text-sm text-[#1a1a1a]">I agree to the terms and conditions *</span>
-                </label>
-              </div>
+                </div>
 
-              <button
-                type="submit"
-                disabled={jobSubmitting}
-                className="w-full bg-[#2563eb] text-white font-semibold py-3 rounded-lg hover:bg-[#1d4ed8] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {jobSubmitting ? "Submitting..." : "Submit Application"}
-              </button>
-            </form>
+                <button
+                  type="submit"
+                  disabled={b2bSubmitting}
+                  className="w-full bg-[#2563eb] text-white font-semibold py-3 rounded-lg hover:bg-[#1d4ed8] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {b2bSubmitting ? "Sending..." : "Send Collaboration Inquiry"}
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>

@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Careers from "./pages/Careers";
+import JobApplication from "./pages/JobApplication";
 import Navigation from "./components/Navigation";
 
 function Router() {
@@ -20,6 +21,7 @@ function Router() {
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
         <Route path="/careers" component={Careers} />
+        <Route path="/apply" component={JobApplication} />
         <Route path="/404" component={NotFound} />
         {/* Final fallback route */}
         <Route component={NotFound} />
