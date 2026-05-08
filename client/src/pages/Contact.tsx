@@ -91,10 +91,7 @@ export default function Contact() {
                 </p>
               </div>
 
-              {/* Book Now Button */}
-              <button className="bg-[#2563eb] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#1d4ed8] transition-all mb-8 inline-block shadow-lg hover:shadow-xl hover:scale-105 transform">
-                Book Now
-              </button>
+
             </div>
           </div>
         </div>
