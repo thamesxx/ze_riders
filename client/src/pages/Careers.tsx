@@ -113,7 +113,7 @@ export default function Careers() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
-      <section className="relative w-full h-[600px] overflow-hidden bg-cover bg-center" style={{backgroundImage: 'url(/manus-storage/pasted_file_kcFKiD_image_46cd1af0.png)'}}>
+      <section className="relative w-full h-[600px] overflow-hidden bg-cover bg-center" style={{backgroundImage: 'url(/manus-storage/pasted_file_mp90Lm_image_365c7a91.png)'}}>
         <div className="absolute inset-0 bg-black/20"></div>
 
         <div className="absolute inset-0 flex items-center">
