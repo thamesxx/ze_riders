@@ -238,11 +238,13 @@ export default function Contact() {
               {/* Map */}
               <div className="mt-12 bg-gray-50 p-4 rounded-lg overflow-hidden">
                 <MapView
+                  initialCenter={{ lat: 24.8241, lng: 67.0521 }}
+                  initialZoom={16}
                   onMapReady={(map) => {
-                    new window.google.maps.Marker({
+                    new window.google.maps.marker.AdvancedMarkerElement({
                       map,
-                      position: { lat: 24.8245, lng: 67.1338 },
-                      title: "Ze Rider - Malir Cantt",
+                      position: { lat: 24.8241, lng: 67.0521 },
+                      title: "Ze Rider - Malir Cantt, Karachi",
                     });
                   }}
                 />
