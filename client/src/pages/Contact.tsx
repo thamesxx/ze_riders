@@ -238,13 +238,13 @@ export default function Contact() {
               {/* Map */}
               <div className="mt-12 bg-gray-50 p-4 rounded-lg overflow-hidden">
                 <MapView
-                  initialCenter={{ lat: 24.8607, lng: 67.0011 }}
+                  initialCenter={{ lat: 24.8245, lng: 67.1338 }}
                   initialZoom={16}
                   onMapReady={(map) => {
                     new window.google.maps.marker.AdvancedMarkerElement({
                       map,
-                      position: { lat: 24.8607, lng: 67.0011 },
-                      title: "Ze Rider - Karachi",
+                      position: { lat: 24.8245, lng: 67.1338 },
+                      title: "Ze Rider - W6J2+CJ Malir Cantonment, Karachi",
                     });
                   }}
                 />
