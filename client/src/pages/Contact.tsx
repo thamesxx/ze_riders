@@ -238,13 +238,13 @@ export default function Contact() {
               {/* Map */}
               <div className="mt-12 bg-gray-50 p-4 rounded-lg overflow-hidden">
                 <MapView
-                  initialCenter={{ lat: 24.8245, lng: 67.1338 }}
+                  initialCenter={{ lat: 24.8265, lng: 67.1365 }}
                   initialZoom={16}
                   onMapReady={(map) => {
                     new window.google.maps.marker.AdvancedMarkerElement({
                       map,
-                      position: { lat: 24.8245, lng: 67.1338 },
-                      title: "Ze Rider - W6J2+CJ Malir Cantonment, Karachi",
+                      position: { lat: 24.8265, lng: 67.1365 },
+                      title: "Ze Rider - 4 Dots Shopping Complex, Malir Cantonment, Karachi",
                     });
                   }}
                 />
