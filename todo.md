@@ -67,3 +67,9 @@
 - [x] Add B2B contact form for company collaboration inquiries
 - [x] Update routing to include new job application page
 - [x] Test all navigation and form submissions
+
+
+## Latest Updates - Careers Page Background
+- [x] Upload new Careers page background image (ZE RIDERS branding)
+- [x] Update Careers hero section to use new background image
+- [x] Verify image displays correctly with overlay and content
