@@ -6,7 +6,7 @@ export default function About() {
       {/* Hero Section */}
       <section className="relative w-full h-[600px] overflow-hidden">
         <img
-          src="/manus-storage/about-hero-rider_30956df6.png"
+          src="thamesxx/ze_riders/client/public/about-hero.png"
           alt="Ze Rider courier with delivery box and route map"
           className="absolute inset-0 w-full h-full object-cover object-right"
         />
@@ -53,7 +53,7 @@ export default function About() {
 
             <div className="bg-gray-50 p-8 rounded-lg">
               <img
-                src="/manus-storage/who-we-are-image_94f99c35.png"
+                src="thamesxx/ze_riders/client/public/who-we-are.png"
                 alt="Ze Riders Team - About Us"
                 className="w-full rounded-lg"
               />
@@ -202,7 +202,7 @@ export default function About() {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <img
-                  src="/manus-storage/ze-rider-logo_4e569ae3.jpg"
+                  src="thamesxx/ze_riders/client/public/zerider_logo.jpg"
                   alt="Ze Rider Logo"
                   className="w-10 h-10 rounded-lg object-cover"
                 />
