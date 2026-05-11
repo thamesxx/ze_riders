@@ -321,7 +321,7 @@ export default function Contact() {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <img
-                  src="/manus-storage/ze-rider-logo_4e569ae3.jpg"
+                  src="/zerider_logo.jpg"
                   alt="Ze Rider Logo"
                   className="w-10 h-10 rounded-lg object-cover"
                 />
