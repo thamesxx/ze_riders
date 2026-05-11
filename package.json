@@ -105,12 +105,18 @@
   },
   "packageManager": "pnpm@11.0.9",
 "pnpm": {
-  "allowedScripts": ["build", "postinstall"],
-  "patchedDependencies": {
-    "wouter@3.7.1": "patches/wouter@3.7.1.patch"
-  },
-  "overrides": {
-    "tailwindcss>nanoid": "3.3.7"
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "@tailwindcss/oxide",
+      "better-sqlite3",
+      "sharp",
+      "bcrypt"
+    ],
+    "patchedDependencies": {
+      "wouter@3.7.1": "patches/wouter@3.7.1.patch"
+    },
+    "overrides": {
+      "tailwindcss>nanoid": "3.3.7"
+    }
   }
-}
 }
