@@ -13,7 +13,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative w-full h-[600px] overflow-hidden">
         <img
-          src="thamesxx/ze_riders/client/public/home-hero.jpeg"
+          src="/home-hero.jpeg"
           alt="Ze Rider courier on motorcycle with delivery box"
           className="absolute inset-0 w-full h-full object-cover"
         />

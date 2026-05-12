@@ -74,7 +74,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
-      <section className="relative w-full h-[600px] overflow-hidden" style={{backgroundImage: 'url(thamesxx/ze_riders/client/public/contact-hero.png)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+      <section className="relative w-full h-[600px] overflow-hidden" style={{backgroundImage: 'url(/contact-hero.png)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
         <div className="absolute inset-0 bg-black/20"></div>
 
         <div className="absolute inset-0 flex items-center">

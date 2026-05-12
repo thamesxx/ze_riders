@@ -12,7 +12,7 @@ export default function Navigation() {
         <Link href="/">
           <div className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity duration-300">
             <img
-              src="thamesxx/ze_riders/client/public/zerider_logo.jpg"
+              src="/zerider_logo.jpg"
               alt="Ze Rider Logo"
               className="w-10 h-10 rounded-lg object-cover"
             />
