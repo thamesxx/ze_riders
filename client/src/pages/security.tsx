@@ -144,7 +144,7 @@ export default function Security() {
       {/* Hero Section */}
       <section className="relative w-full h-[500px] overflow-hidden">
         <img
-          src="/manus-storage/pasted_file_uls0iM_image_fa3e6594.png"
+          src="/security-hero.jpeg"
           alt="Ze Rider Security - Your Safety Our Promise"
           className="absolute inset-0 w-full h-full object-cover"
         />
